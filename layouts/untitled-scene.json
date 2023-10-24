@@ -1,0 +1,2132 @@
+{
+  "b": 255,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Untitled_32scene",
+  "name": "Untitled scene",
+  "r": 255,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 255,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 1.688853694704148,
+    "windowMask": false
+  },
+  "objectsGroups": [
+    {
+      "name": "Collision",
+      "objects": [
+        {
+          "name": "Wall"
+        },
+        {
+          "name": "Desk"
+        },
+        {
+          "name": "Burner"
+        },
+        {
+          "name": "Radio"
+        },
+        {
+          "name": "LogGround"
+        },
+        {
+          "name": "Bed"
+        },
+        {
+          "name": "Tree"
+        },
+        {
+          "name": "Snow"
+        }
+      ]
+    }
+  ],
+  "variables": [],
+  "instances": [
+    {
+      "angle": 180,
+      "customSize": true,
+      "depth": 30,
+      "height": 30,
+      "layer": "",
+      "name": "Camera",
+      "persistentUuid": "89bada86-ef3a-4eb9-8a4b-edb6b9cd495f",
+      "width": 30,
+      "x": 430,
+      "y": 268,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 10,
+      "layer": "",
+      "name": "Wall",
+      "persistentUuid": "76605c86-f3f4-4a54-bd59-d6be83be0768",
+      "width": 300,
+      "x": 0,
+      "y": 0,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 10,
+      "layer": "",
+      "name": "Wall",
+      "persistentUuid": "890875d4-d680-4889-b814-edd84fc135ea",
+      "width": 300,
+      "x": 0,
+      "y": 200,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 200,
+      "layer": "",
+      "name": "Wall",
+      "persistentUuid": "0e0e698e-9ca5-421c-9324-44a8c3302965",
+      "width": 10,
+      "x": 0,
+      "y": 0,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 100,
+      "layer": "",
+      "name": "Wall",
+      "persistentUuid": "6173ec73-cc12-458f-b718-86e50e5b5510",
+      "width": 10,
+      "x": 300,
+      "y": 0,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 50,
+      "layer": "",
+      "name": "Wall",
+      "persistentUuid": "cbe7c4a7-96c2-4ce1-93ca-0aac93b0b0e9",
+      "width": 10,
+      "x": 300,
+      "y": 160,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 20,
+      "height": 60,
+      "layer": "",
+      "name": "Roof",
+      "persistentUuid": "4c583e6a-e536-4169-80e0-2a3257457224",
+      "width": 10,
+      "x": 300,
+      "y": 100,
+      "z": 80,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 80,
+      "height": 60,
+      "layer": "",
+      "name": "Door",
+      "persistentUuid": "6b1fd2e9-f44e-49b9-80ce-a738a0cec12f",
+      "width": 10,
+      "x": 300,
+      "y": 100,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Desk",
+      "persistentUuid": "6213fad4-c714-4f4b-924f-faa45a65a492",
+      "width": 0,
+      "x": 10,
+      "y": 150,
+      "zOrder": -11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Burner",
+      "persistentUuid": "72008b1a-c5ce-42bf-8c4f-a0254bd27e36",
+      "width": 0,
+      "x": 173,
+      "y": 10,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Radio",
+      "persistentUuid": "ea9d77d3-36ee-4673-a1aa-4beb7b48e5a3",
+      "width": 0,
+      "x": 170,
+      "y": 190,
+      "z": 30,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 20,
+      "height": 2,
+      "layer": "",
+      "name": "Computer",
+      "persistentUuid": "c14a37d8-d8ae-48c0-a58d-de58fdd53699",
+      "rotationX": -10,
+      "width": 20,
+      "x": 50,
+      "y": 169,
+      "z": 16,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 15,
+      "layer": "",
+      "name": "Computer",
+      "persistentUuid": "e813df4a-e3c6-4dac-a0df-9c0337daf45b",
+      "width": 20,
+      "x": 50,
+      "y": 155,
+      "z": 20,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Stump",
+      "persistentUuid": "3e2f1742-4a27-4250-8d3f-bc9ad1b94d2b",
+      "width": 0,
+      "x": 371,
+      "y": 293,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "664baa5e-99e6-49d3-9a65-42e51764663d",
+      "width": 0,
+      "x": 200,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "3bbca669-7573-4c36-8a74-426dc18f5887",
+      "width": 0,
+      "x": 174,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "8179fc8a-eead-4c1d-9ffc-d4df3df167a7",
+      "width": 0,
+      "x": 213,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "3ac68493-848e-4afd-9d1e-44f77c6fd615",
+      "width": 0,
+      "x": 226,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 3,
+      "height": 2,
+      "layer": "",
+      "name": "Stump",
+      "persistentUuid": "80b6701d-3dec-48e2-9327-1a48626eb0b1",
+      "width": 5,
+      "x": 383,
+      "y": 291,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "2e86e65d-0a0e-4fa6-8400-293e08cfa93d",
+      "width": 0,
+      "x": 187,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "51d3d88d-8efd-4226-96d4-fae324d78f0d",
+      "width": 0,
+      "x": 239,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "93553c99-7f1b-466a-9547-4bb50f4cbba8",
+      "width": 0,
+      "x": 265,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "cbe237a9-cb9d-49ab-a92c-6c17284f79e9",
+      "width": 0,
+      "x": 252,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "32114bbf-9e1f-4181-9f54-ac7df8d8542f",
+      "width": 0,
+      "x": 148,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "b5f20aee-0de9-4340-aafb-cb00e6859c12",
+      "width": 0,
+      "x": 161,
+      "y": 212,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "fec8d443-2c03-4c71-849d-372517fc92a1",
+      "width": 0,
+      "x": 259,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "774883cb-59f6-450d-986b-47363fc43eb3",
+      "width": 0,
+      "x": 246,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "a4e475a0-15ff-46e7-a87c-dee6f4ccf468",
+      "width": 0,
+      "x": 233,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "60a0491e-ab73-45fe-a082-32e8b2a57f7c",
+      "width": 0,
+      "x": 220,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "4cd1b146-f1e1-4ee4-90f7-1745b3c15c2d",
+      "width": 0,
+      "x": 207,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "9c1c324f-1178-402b-96ca-a26f6b78d26f",
+      "width": 0,
+      "x": 194,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "4ecf6040-183b-4e1e-a0a8-ccac9eefeaee",
+      "width": 0,
+      "x": 181,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "1363b251-d0c0-4582-88fb-c2652d68e496",
+      "width": 0,
+      "x": 168,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "c1a0adcd-a163-4a63-806f-f9574e19f35d",
+      "width": 0,
+      "x": 155,
+      "y": 212,
+      "z": 10,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "7590833f-d25c-4054-a1ba-9fcfbcd324be",
+      "width": 0,
+      "x": 161,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "be7c1ef7-faf1-4638-a112-a681def30241",
+      "width": 0,
+      "x": 174,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "c4fea681-b859-4b6e-a916-cf11d373e7b2",
+      "width": 0,
+      "x": 187,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "1acf0b37-c9a3-4fc6-b66b-a431a911e736",
+      "width": 0,
+      "x": 200,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "99b90e87-62b6-4c4d-b6e4-1f5cf915b9f1",
+      "width": 0,
+      "x": 213,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "321fc677-d160-47a7-ade3-5a01138d2b13",
+      "width": 0,
+      "x": 226,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "437a8584-1edc-47b9-9f92-2efc9d86b9f3",
+      "width": 0,
+      "x": 239,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LogGround",
+      "persistentUuid": "433e31be-ab5c-4982-b575-2844ceb8584d",
+      "width": 0,
+      "x": 252,
+      "y": 212,
+      "z": 20,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 60,
+      "layer": "",
+      "name": "Bed",
+      "persistentUuid": "05ab4b3f-02a7-409f-a458-55da2e882df5",
+      "width": 120,
+      "x": 10,
+      "y": 10,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Pillow",
+      "persistentUuid": "876d5814-742b-49fb-8941-ac64a7a88e43",
+      "width": 0,
+      "x": 10,
+      "y": 25,
+      "z": 15,
+      "zOrder": 21,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 622,
+      "layer": "",
+      "name": "Ground",
+      "persistentUuid": "d16eecb2-cd6c-4330-9372-5c15637a3c46",
+      "width": 835,
+      "x": -153,
+      "y": -117,
+      "zOrder": -14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 60,
+      "height": 7,
+      "layer": "",
+      "name": "Burner",
+      "persistentUuid": "e4cda88d-dec9-4342-b5e3-435f5d641a30",
+      "width": 7,
+      "x": 190,
+      "y": 10,
+      "z": 40,
+      "zOrder": 22,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 10,
+      "height": 2,
+      "layer": "",
+      "name": "Burner",
+      "persistentUuid": "acd3c456-3390-42ac-bdb5-6f414fabc5bd",
+      "width": 10,
+      "x": 185,
+      "y": 189,
+      "z": 35,
+      "zOrder": 23,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 200,
+      "layer": "",
+      "name": "Rug",
+      "persistentUuid": "b1b80ec0-3991-4e13-8e95-b85335c1e0bc",
+      "width": 300,
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "zOrder": -15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "RadioLight",
+      "persistentUuid": "a7d22019-4744-4a9c-8a77-d191fff4dfcd",
+      "width": 0,
+      "x": 174,
+      "y": 189,
+      "z": 38,
+      "zOrder": 26,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 38,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "16aeadc1-f00d-408a-bb81-fe80ea508968",
+      "width": 637,
+      "x": -41,
+      "y": 483,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 38,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "95671e48-8f2c-42db-aa6c-71fd62a0e525",
+      "width": 637,
+      "x": -45,
+      "y": -143,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 413,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "fbad33f2-048c-4b6a-aaed-7d5d5e08de57",
+      "width": 48,
+      "x": 660,
+      "y": -25,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 100,
+      "height": 413,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "484f6154-a81d-4929-95e0-c9d2cee7fcff",
+      "width": 48,
+      "x": -190,
+      "y": -55,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 139,
+      "customSize": true,
+      "depth": 100,
+      "height": 26,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "cceb883c-517b-4d88-b660-ccc289312898",
+      "width": 296,
+      "x": 479,
+      "y": 411,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 139,
+      "customSize": true,
+      "depth": 100,
+      "height": 26,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "2dd1ecb0-3005-4cc9-a013-46aa78075fc8",
+      "width": 296,
+      "x": -242,
+      "y": -76,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 313,
+      "customSize": true,
+      "depth": 100,
+      "height": 237,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "0c5045ef-01db-4d2e-b79b-8224084c2aed",
+      "width": 48,
+      "x": -104,
+      "y": 311,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 313,
+      "customSize": true,
+      "depth": 100,
+      "height": 237,
+      "layer": "",
+      "name": "Snow",
+      "persistentUuid": "be48b7b6-eaab-4486-933d-19cbcf3be961",
+      "width": 48,
+      "x": 595,
+      "y": -187,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 10,
+      "height": 210,
+      "layer": "",
+      "name": "Roof",
+      "persistentUuid": "b0da3072-053e-4dcf-ae25-85fbdf848f5d",
+      "width": 310,
+      "x": 0,
+      "y": 0,
+      "z": 100,
+      "zOrder": 28,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "Camera",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 50,
+        "height": 50,
+        "depth": 50,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "camera.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Wall",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 200,
+        "height": 10,
+        "depth": 100,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\wall.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\wall.png",
+        "rightFaceResourceName": "assets\\wall.png",
+        "topFaceResourceName": "assets\\wall.png",
+        "bottomFaceResourceName": "assets\\wall.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Roof",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 10,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\wall.png",
+        "backFaceResourceName": "assets\\wall.png",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\wall.png",
+        "rightFaceResourceName": "assets\\wall.png",
+        "topFaceResourceName": "assets\\wall.png",
+        "bottomFaceResourceName": "assets\\wall.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": true,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": true,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Door",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 10,
+        "height": 60,
+        "depth": 80,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\door.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\door.png",
+        "rightFaceResourceName": "assets\\door.png",
+        "topFaceResourceName": "assets\\door.png",
+        "bottomFaceResourceName": "assets\\door.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Desk",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 50,
+        "depth": 20,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\stump.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\stump.png",
+        "rightFaceResourceName": "assets\\stump.png",
+        "topFaceResourceName": "assets\\stump.png",
+        "bottomFaceResourceName": "assets\\stump.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Burner",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 30,
+        "height": 30,
+        "depth": 40,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\burner.png",
+        "backFaceResourceName": "assets\\burner.png",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\burner.png",
+        "rightFaceResourceName": "assets\\burner.png",
+        "topFaceResourceName": "assets\\burner.png",
+        "bottomFaceResourceName": "assets\\burner.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": true,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": true,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Ground",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 0,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\ground.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Radio",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 30,
+        "height": 10,
+        "depth": 20,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\stump.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\stump.png",
+        "rightFaceResourceName": "assets\\stump.png",
+        "topFaceResourceName": "assets\\stump.png",
+        "bottomFaceResourceName": "assets\\stump.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Computer",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 30,
+        "height": 5,
+        "depth": 20,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\burner.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\burner.png",
+        "rightFaceResourceName": "assets\\burner.png",
+        "topFaceResourceName": "assets\\burner.png",
+        "bottomFaceResourceName": "assets\\burner.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Stump",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 20,
+        "height": 20,
+        "depth": 3,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\stump.png",
+        "backFaceResourceName": "assets\\New image.png",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\stump.png",
+        "rightFaceResourceName": "assets\\stump.png",
+        "topFaceResourceName": "assets\\stump.png",
+        "bottomFaceResourceName": "assets\\stump.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "LogGround",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 10,
+        "height": 20,
+        "depth": 10,
+        "enableTextureTransparency": true,
+        "facesOrientation": "Y",
+        "frontFaceResourceName": "assets\\log.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\log.png",
+        "rightFaceResourceName": "assets\\log.png",
+        "topFaceResourceName": "assets\\log.png",
+        "bottomFaceResourceName": "assets\\log.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "LogHolding",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 10,
+        "height": 10,
+        "depth": 20,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\log.png",
+        "backFaceResourceName": "assets\\log.png",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\log.png",
+        "rightFaceResourceName": "assets\\log.png",
+        "topFaceResourceName": "assets\\log.png",
+        "bottomFaceResourceName": "assets\\log.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": true,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Bed",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 60,
+        "depth": 15,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\bed.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\bed.png",
+        "rightFaceResourceName": "assets\\bed.png",
+        "topFaceResourceName": "assets\\bed.png",
+        "bottomFaceResourceName": "assets\\bed.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Pillow",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 20,
+        "height": 30,
+        "depth": 5,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\bed.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\bed.png",
+        "rightFaceResourceName": "assets\\bed.png",
+        "topFaceResourceName": "assets\\bed.png",
+        "bottomFaceResourceName": "assets\\bed.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Tree",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 15,
+        "height": 15,
+        "depth": 300,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\tree.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\tree.png",
+        "rightFaceResourceName": "assets\\tree.png",
+        "topFaceResourceName": "assets\\tree.png",
+        "bottomFaceResourceName": "assets\\tree.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Rug",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 0,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\rug.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "assets\\rug.png",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "RadioLight",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [
+        {
+          "folded": true,
+          "name": "LightIsOn",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 4,
+        "height": 1,
+        "depth": 4,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\burner.png",
+        "backFaceResourceName": "assets\\burner.png",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\burner.png",
+        "rightFaceResourceName": "assets\\burner.png",
+        "topFaceResourceName": "assets\\light_off.png",
+        "bottomFaceResourceName": "assets\\burner.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": true,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": true,
+        "leftFaceResourceRepeat": true,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "Basic"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Snow",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 100,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "assets\\ground.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "assets\\ground.png",
+        "rightFaceResourceName": "assets\\ground.png",
+        "topFaceResourceName": "assets\\ground.png",
+        "bottomFaceResourceName": "assets\\ground.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": true,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": true,
+        "topFaceResourceRepeat": true,
+        "bottomFaceResourceRepeat": true,
+        "materialType": "Basic"
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Scene3D::Base3DBehavior::SetZ"
+          },
+          "parameters": [
+            "Camera",
+            "Object3D",
+            "=",
+            "40"
+          ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "Camera"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "MousePointerLock::isPointerLocked"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "MousePointerLock::RequestPointerLock"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "MousePointerLock::isPointerLocked"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetAngle"
+          },
+          "parameters": [
+            "Camera",
+            "+",
+            "MousePointerLock::MovementX() / 20"
+          ]
+        },
+        {
+          "type": {
+            "value": "Scene3D::Base3DBehavior::SetRotationY"
+          },
+          "parameters": [
+            "Camera",
+            "Object3D",
+            "+",
+            "MousePointerLock::MovementY() / 20"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "Scene3D::Base3DBehavior::SetRotationY"
+          },
+          "parameters": [
+            "Camera",
+            "Object3D",
+            "=",
+            "clamp(Camera.RotationY(), -90, 90)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "FirstPersonCamera::LookFromObjectEyes"
+          },
+          "parameters": [
+            "",
+            "Camera",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "w"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle()",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "d"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 90",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "s"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 180",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "a"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 270",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Camera",
+            "Collision",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "Camera",
+            "Collision",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "RepeatEveryXSeconds::Repeat"
+          },
+          "parameters": [
+            "",
+            "\"RadioTimer\"",
+            "0.3",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ToggleObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "RadioLight",
+            "LightIsOn"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "RadioLight",
+                "LightIsOn",
+                "False"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene3D::Cube3DObject::SetFaceResource"
+              },
+              "parameters": [
+                "RadioLight",
+                "\"top\"",
+                "assets\\light_off.png"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "RadioLight",
+                "LightIsOn",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene3D::Cube3DObject::SetFaceResource"
+              },
+              "parameters": [
+                "RadioLight",
+                "\"top\"",
+                "assets\\light_on.png"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 0.1,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Scene3D::ExponentialFog",
+          "name": "Fog_Thick",
+          "doubleParameters": {
+            "density": 0.005
+          },
+          "stringParameters": {
+            "color": "249;255;241"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "Effect",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 45
+          },
+          "stringParameters": {
+            "groundColor": "127;127;127",
+            "skyColor": "255;255;255",
+            "top": "Z+"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 0.1,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "Flippable",
+      "type": "FlippableCapability::FlippableBehavior"
+    },
+    {
+      "name": "Object3D",
+      "type": "Scene3D::Base3DBehavior"
+    },
+    {
+      "name": "Resizable",
+      "type": "ResizableCapability::ResizableBehavior"
+    },
+    {
+      "name": "Scale",
+      "type": "ScalableCapability::ScalableBehavior"
+    }
+  ]
+}
