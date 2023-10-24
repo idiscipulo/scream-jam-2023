@@ -223,6 +223,49 @@
         "name": "assets\\light_off.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/axe_side.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\axe_side.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/axe_top.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\axe_top.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "prompts/radio_prompt.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "prompts\\radio_prompt.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/prompt.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\prompt.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "fonts/IcesWhenReal-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "fonts\\IcesWhenReal-Regular.ttf",
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -238,6 +281,10 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/raycaster3d"
+    },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/repeateveryxseconds"
