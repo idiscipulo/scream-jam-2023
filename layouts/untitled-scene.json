@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7370816317994175,
+    "zoomFactor": 0.41943397827591455,
     "windowMask": false
   },
   "objectsGroups": [
@@ -48,11 +48,33 @@
         },
         {
           "name": "Snow"
+        },
+        {
+          "name": "Door"
         }
       ]
     }
   ],
-  "variables": [],
+  "variables": [
+    {
+      "folded": true,
+      "name": "WorkProgress",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "LogProgress",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "DoorUse",
+      "type": "boolean",
+      "value": true
+    }
+  ],
   "instances": [
     {
       "angle": 43,
@@ -205,9 +227,9 @@
       "name": "Burner",
       "persistentUuid": "72008b1a-c5ce-42bf-8c4f-a0254bd27e36",
       "width": 0,
-      "x": 528,
+      "x": 551,
       "y": 205,
-      "zOrder": 11,
+      "zOrder": -17,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -727,7 +749,7 @@
       "width": 888,
       "x": 202,
       "y": -189,
-      "zOrder": -16,
+      "zOrder": -19,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -741,7 +763,7 @@
       "name": "Burner",
       "persistentUuid": "e4cda88d-dec9-4342-b5e3-435f5d641a30",
       "width": 7,
-      "x": 545,
+      "x": 569,
       "y": 205,
       "z": 40,
       "zOrder": 22,
@@ -778,7 +800,7 @@
       "x": 360,
       "y": 200,
       "z": 1,
-      "zOrder": -15,
+      "zOrder": -18,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -929,16 +951,17 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 117,
+      "height": 233,
       "layer": "UI",
       "name": "LogHolding",
       "persistentUuid": "27c4d66b-0310-4ef6-b9fc-1703403f309d",
       "rotationX": 10,
       "rotationY": 15,
-      "width": 0,
-      "x": 1389,
-      "y": 602,
+      "width": 117,
+      "x": 1373,
+      "y": 445,
       "zOrder": 29,
       "numberProperties": [],
       "stringProperties": [],
@@ -1030,8 +1053,8 @@
       "name": "Tree",
       "persistentUuid": "c0504f6e-8e30-4543-b4a5-27b28fde94be",
       "width": 0,
-      "x": 665,
-      "y": 39,
+      "x": 786,
+      "y": -94,
       "zOrder": 30,
       "numberProperties": [],
       "stringProperties": [],
@@ -1075,8 +1098,8 @@
       "name": "Tree",
       "persistentUuid": "4ad7aa79-9fe1-4b96-b641-868887fca3e5",
       "width": 0,
-      "x": 622,
-      "y": 84,
+      "x": 864,
+      "y": -90,
       "zOrder": 31,
       "numberProperties": [],
       "stringProperties": [],
@@ -2545,8 +2568,8 @@
       "name": "Tree",
       "persistentUuid": "986fcecf-1cf3-49fa-9ac0-15bad9ac6952",
       "width": 0,
-      "x": 484,
-      "y": 89,
+      "x": 872,
+      "y": -56,
       "zOrder": 33,
       "numberProperties": [],
       "stringProperties": [],
@@ -3013,8 +3036,8 @@
       "name": "ProgressBackground",
       "persistentUuid": "1d6c88b7-9c46-46ae-b157-d1351221a84b",
       "width": 500,
-      "x": 380,
-      "y": 659,
+      "x": 381,
+      "y": 660,
       "zOrder": 35,
       "numberProperties": [],
       "stringProperties": [],
@@ -3029,9 +3052,24 @@
       "name": "Progress",
       "persistentUuid": "fc2ca34d-10ee-45ce-9f7b-a9f2b64417b2",
       "width": 500,
-      "x": 380,
-      "y": 659,
+      "x": 379,
+      "y": 658,
       "zOrder": 36,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "DoorSpace",
+      "persistentUuid": "a64d9f8c-921a-4149-a532-afacecd4d661",
+      "width": 0,
+      "x": 655,
+      "y": 295,
+      "zOrder": 37,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -3180,6 +3218,42 @@
         "topFaceResourceRepeat": true,
         "bottomFaceResourceRepeat": true,
         "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "DoorSpace",
+      "tags": "",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 10,
+        "height": 60,
+        "depth": 80,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Y",
+        "frontFaceResourceName": "",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": false,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
       }
     },
     {
@@ -3407,9 +3481,9 @@
       "effects": [],
       "behaviors": [],
       "content": {
-        "width": 150,
-        "height": 300,
-        "depth": 150,
+        "width": 10,
+        "height": 20,
+        "depth": 10,
         "enableTextureTransparency": false,
         "facesOrientation": "Y",
         "frontFaceResourceName": "assets\\log.png",
@@ -3517,7 +3591,7 @@
       "content": {
         "width": 15,
         "height": 15,
-        "depth": 300,
+        "depth": 500,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
         "frontFaceResourceName": "assets\\tree.png",
@@ -3674,9 +3748,9 @@
       "textAlignment": "center",
       "characterSize": 48,
       "color": {
-        "b": 199,
-        "g": 199,
-        "r": 199
+        "b": 203,
+        "g": 231,
+        "r": 228
       }
     },
     {
@@ -3718,14 +3792,14 @@
       "textAlignment": "center",
       "characterSize": 48,
       "color": {
-        "b": 199,
-        "g": 199,
-        "r": 199
+        "b": 203,
+        "g": 231,
+        "r": 228
       }
     },
     {
       "assetStoreId": "",
-      "bold": false,
+      "bold": true,
       "italic": false,
       "name": "ProgressBackground",
       "smoothed": true,
@@ -3740,9 +3814,9 @@
       "textAlignment": "center",
       "characterSize": 48,
       "color": {
-        "b": 22,
-        "g": 22,
-        "r": 22
+        "b": 34,
+        "g": 34,
+        "r": 34
       }
     }
   ],
@@ -3774,6 +3848,18 @@
       "actions": [],
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Setup Camera"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -3797,6 +3883,18 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Random Variation"
         },
         {
           "type": "BuiltinCommonInstructions::ForEach",
@@ -3824,6 +3922,61 @@
                 "+",
                 "RandomInRange(-3, 3)"
               ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "Tree",
+                "Resizable",
+                "=",
+                "RandomInRange(5, 15)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+              },
+              "parameters": [
+                "Tree",
+                "Resizable",
+                "=",
+                "Tree.Width()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetDepth"
+              },
+              "parameters": [
+                "Tree",
+                "Object3D",
+                "=",
+                "500 * (Tree.Width() / 15)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "LogGround",
+                "Resizable",
+                "=",
+                "RandomInRange(9, 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetDepth"
+              },
+              "parameters": [
+                "LogGround",
+                "Object3D",
+                "=",
+                "LogGround.Width()"
+              ]
             }
           ]
         }
@@ -3839,7 +3992,7 @@
         "textG": 0,
         "textR": 0
       },
-      "comment": ""
+      "comment": "Camera"
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -3959,7 +4112,7 @@
         "textG": 0,
         "textR": 0
       },
-      "comment": ""
+      "comment": "Movement and Collision"
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -4207,87 +4360,6 @@
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "SceneInstancesCount"
-          },
-          "parameters": [
-            "",
-            "Door",
-            "<=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "inverted": true,
-            "value": "Distance"
-          },
-          "parameters": [
-            "Camera",
-            "Door",
-            "100",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "Door",
-            "655",
-            "295",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "Distance"
-          },
-          "parameters": [
-            "Camera",
-            "Door",
-            "100",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Door",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Comment",
-      "color": {
-        "b": 109,
-        "g": 230,
-        "r": 255,
-        "textB": 0,
-        "textG": 0,
-        "textR": 0
-      },
-      "comment": ""
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": [
         {
@@ -4333,6 +4405,19 @@
       ]
     },
     {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Universal Actions"
+    },
+    {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -4341,7 +4426,7 @@
           },
           "parameters": [
             "Camera",
-            "Radio",
+            "DoorSpace",
             "30",
             "Camera.Y()"
           ]
@@ -4352,31 +4437,181 @@
           },
           "parameters": [
             "Camera",
-            "Radio",
+            "DoorSpace",
             "100",
             ""
           ]
         }
       ],
-      "actions": [
+      "actions": [],
+      "events": [
         {
-          "type": {
-            "value": "TextObject::String"
-          },
-          "parameters": [
-            "HelpText",
-            "=",
-            "\"Press (E) to LISTEN\""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "",
+                "Door",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpText",
+                "=",
+                "\"Press (E) to OPEN\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpTextBackground",
+                "=",
+                "\"Press (E) to OPEN\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DoorUse",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Door",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DoorUse",
+                    "False"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
-          "type": {
-            "value": "TextObject::String"
-          },
-          "parameters": [
-            "HelpTextBackground",
-            "=",
-            "\"Press (E) to LISTEN\""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "",
+                "Door",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpText",
+                "=",
+                "\"Press (E) to CLOSE\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpTextBackground",
+                "=",
+                "\"Press (E) to CLOSE\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DoorUse",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Door",
+                    "655",
+                    "295",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DoorUse",
+                    "False"
+                  ]
+                }
+              ]
+            }
           ]
         }
       ]
@@ -4386,46 +4621,529 @@
       "conditions": [
         {
           "type": {
-            "value": "EstTourne"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "Camera",
-            "Computer",
-            "30",
-            "Camera.Y()"
-          ]
-        },
-        {
-          "type": {
-            "value": "Distance"
-          },
-          "parameters": [
-            "Camera",
-            "Computer",
-            "100",
-            ""
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "EstTourne"
+              },
+              "parameters": [
+                "Camera",
+                "DoorSpace",
+                "30",
+                "Camera.Y()"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "DoorSpace",
+                "100",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "e"
+              ]
+            }
           ]
         }
       ],
       "actions": [
         {
           "type": {
-            "value": "TextObject::String"
+            "value": "SetSceneVariableAsBoolean"
           },
           "parameters": [
-            "HelpText",
-            "=",
-            "\"Hold (E) to WORK\""
+            "DoorUse",
+            "True"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Inside Actions"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Camera",
+            "Rug",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "EstTourne"
+              },
+              "parameters": [
+                "Camera",
+                "Radio",
+                "30",
+                "Camera.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "Radio",
+                "100",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpText",
+                "=",
+                "\"Press (E) to LISTEN\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpTextBackground",
+                "=",
+                "\"Press (E) to LISTEN\""
+              ]
+            }
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "EstTourne"
+              },
+              "parameters": [
+                "Camera",
+                "Computer",
+                "30",
+                "Camera.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "Computer",
+                "100",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpText",
+                "=",
+                "\"Hold (E) to WORK\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpTextBackground",
+                "=",
+                "\"Hold (E) to WORK\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "ProgressBackground",
+                    "=",
+                    "\"——————\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "floor(WorkProgress)",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Progress",
+                    "+",
+                    "\"—\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "WorkProgress",
+                    "+",
+                    "0.02"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "WorkProgress",
+                    "=",
+                    "min(WorkProgress, 6)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "EstTourne"
+                  },
+                  "parameters": [
+                    "Camera",
+                    "Computer",
+                    "30",
+                    "Camera.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Camera",
+                    "Computer",
+                    "100",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "WorkProgress",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Outside Actions"
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
           "type": {
-            "value": "TextObject::String"
+            "inverted": true,
+            "value": "CollisionNP"
           },
           "parameters": [
-            "HelpTextBackground",
-            "=",
-            "\"Hold (E) to WORK\""
+            "Camera",
+            "Rug",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "EstTourne"
+              },
+              "parameters": [
+                "Camera",
+                "LogGround",
+                "30",
+                "Camera.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "LogGround",
+                "100",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpText",
+                "=",
+                "\"Hold (E) to PICK UP\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HelpTextBackground",
+                "=",
+                "\"Hold (E) to PICK UP\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "ProgressBackground",
+                    "=",
+                    "\"——————\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "floor(LogProgress)",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Progress",
+                    "+",
+                    "\"—\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "LogProgress",
+                    "+",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "LogProgress",
+                    "=",
+                    "min(LogProgress, 6)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "EstTourne"
+                  },
+                  "parameters": [
+                    "Camera",
+                    "LogGround",
+                    "30",
+                    "Camera.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Camera",
+                    "LogGround",
+                    "100",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "e"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LogProgress",
+                "=",
+                "0"
+              ]
+            }
           ]
         }
       ]
