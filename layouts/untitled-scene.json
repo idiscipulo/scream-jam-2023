@@ -4417,7 +4417,59 @@
       "comment": "Universal Actions"
     },
     {
-      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "Door",
+                "<=",
+                "235"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "Door",
+                ">=",
+                "295"
+              ]
+            }
+          ]
+        },
+        {
+          "type": {
+            "value": "Vitesse"
+          },
+          "parameters": [
+            "Door",
+            ">",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Arreter"
+          },
+          "parameters": [
+            "Door"
+          ]
+        }
+      ]
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -4450,13 +4502,12 @@
           "conditions": [
             {
               "type": {
-                "value": "SceneInstancesCount"
+                "value": "PosY"
               },
               "parameters": [
-                "",
                 "Door",
                 "=",
-                "1"
+                "295"
               ]
             }
           ],
@@ -4508,11 +4559,13 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Delete"
+                    "value": "AddForceAL"
                   },
                   "parameters": [
                     "Door",
-                    ""
+                    "Door.Angle() - 90",
+                    "30",
+                    "1"
                   ]
                 },
                 {
@@ -4521,7 +4574,7 @@
                   },
                   "parameters": [
                     "DoorUse",
-                    "False"
+                    ""
                   ]
                 }
               ]
@@ -4533,13 +4586,13 @@
           "conditions": [
             {
               "type": {
-                "value": "SceneInstancesCount"
+                "inverted": true,
+                "value": "PosY"
               },
               "parameters": [
-                "",
                 "Door",
                 "=",
-                "0"
+                "295"
               ]
             }
           ],
@@ -4591,14 +4644,13 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Create"
+                    "value": "AddForceAL"
                   },
                   "parameters": [
-                    "",
                     "Door",
-                    "655",
-                    "295",
-                    ""
+                    "Door.Angle() - 90",
+                    "-30",
+                    "1"
                   ]
                 },
                 {
