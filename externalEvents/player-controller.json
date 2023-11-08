@@ -1,0 +1,317 @@
+{
+  "associatedLayout": "Untitled scene",
+  "lastChangeTimeStamp": 0,
+  "name": "Player controller",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Camera"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "MousePointerLock::isPointerLocked"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "MousePointerLock::RequestPointerLock"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "MousePointerLock::isPointerLocked"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetAngle"
+          },
+          "parameters": [
+            "Camera",
+            "+",
+            "MousePointerLock::MovementX() / 20"
+          ]
+        },
+        {
+          "type": {
+            "value": "Scene3D::Base3DBehavior::SetRotationY"
+          },
+          "parameters": [
+            "Camera",
+            "Object3D",
+            "+",
+            "MousePointerLock::MovementY() / 20"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "Scene3D::Base3DBehavior::SetRotationY"
+          },
+          "parameters": [
+            "Camera",
+            "Object3D",
+            "=",
+            "clamp(Camera.RotationY(), -90, 90)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "w"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle()",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "d"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 90",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "s"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 180",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "a"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Camera",
+            "Camera.Angle() + 270",
+            "100",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "BodyBox",
+            "=",
+            "Camera.CenterX()",
+            "=",
+            "Camera.CenterY()"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetAngle"
+          },
+          "parameters": [
+            "BodyBox",
+            "=",
+            "Camera.Angle()"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "BodyBox",
+            "Collidable",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "BodyBox",
+            "Collidable",
+            "yes"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "Camera",
+            "=",
+            "BodyBox.CenterX()",
+            "=",
+            "BodyBox.CenterY()"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "FirstPersonCamera::LookFromObjectEyes"
+          },
+          "parameters": [
+            "",
+            "Camera",
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "author": "",
+  "category": "",
+  "extensionNamespace": "",
+  "fullName": "",
+  "helpPath": "",
+  "iconUrl": "",
+  "name": "Movement3D",
+  "previewIconUrl": "",
+  "shortDescription": "",
+  "version": "",
+  "description": "",
+  "tags": [],
+  "authorIds": [],
+  "dependencies": [],
+  "eventsFunctions": [],
+  "eventsBasedBehaviors": [
+    {
+      "description": "Control the object's movement in 3D space.",
+      "fullName": "Movable",
+      "name": "Movable",
+      "objectType": "Scene3D::Cube3DObject",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onCreated",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "Object.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "Object.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetZ"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "Object.Z()"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "Movement3D::Movable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::PropertyTarget"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "sign(TargetX - Object.X()) * min(abs(TargetX - Object.X()), Speed / 60)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "sign(TargetY - Object.Y()) * min(abs(TargetY - Object.Y()), Speed / 60)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object3D",
+                    "+",
+                    "sign(TargetZ - Object.Z()) * min(abs(TargetZ - Object.Z()), Speed / 60)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "TargetX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PosY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "TargetY"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::Z"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object3D",
+                    "=",
+                    "TargetZ"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTarget"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "Movement3D::Movable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Move an object to a position",
+          "fullName": "Move to a position",
+          "functionType": "Action",
+          "name": "MoveTowardPosition",
+          "sentence": "Move _PARAM0_ to (_PARAM2_, _PARAM3_, _PARAM4_)",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTarget"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "x"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "y"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Movement3D::Movable::SetPropertyTargetZ"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "z"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "Movement3D::Movable",
+              "type": "behavior"
+            },
+            {
+              "description": "X position",
+              "name": "x",
+              "type": "expression"
+            },
+            {
+              "description": "Y position",
+              "name": "y",
+              "type": "expression"
+            },
+            {
+              "description": "Z position",
+              "name": "z",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "30",
+          "type": "Number",
+          "unit": "PixelSpeed",
+          "label": "Speed",
+          "description": "",
+          "group": "",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "Speed"
+        },
+        {
+          "value": "",
+          "type": "Number",
+          "unit": "Pixel",
+          "label": "TargetX",
+          "description": "",
+          "group": "",
+          "extraInformation": [],
+          "hidden": true,
+          "name": "TargetX"
+        },
+        {
+          "value": "",
+          "type": "Number",
+          "unit": "Pixel",
+          "label": "TargetY",
+          "description": "",
+          "group": "",
+          "extraInformation": [],
+          "hidden": true,
+          "name": "TargetY"
+        },
+        {
+          "value": "",
+          "type": "Number",
+          "unit": "Pixel",
+          "label": "TargetZ",
+          "description": "",
+          "group": "",
+          "extraInformation": [],
+          "hidden": true,
+          "name": "TargetZ"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "",
+          "description": "The object is currently moving to a target",
+          "group": "",
+          "extraInformation": [],
+          "hidden": true,
+          "name": "Target"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    }
+  ],
+  "eventsBasedObjects": []
+}
