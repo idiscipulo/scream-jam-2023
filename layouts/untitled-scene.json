@@ -43,21 +43,6 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "BodyBox",
-      "persistentUuid": "400bc3a9-907c-4ecb-8bad-4927e6b45fa0",
-      "width": 0,
-      "x": 270,
-      "y": 450,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": true,
       "depth": 70,
       "height": 25,
@@ -1122,6 +1107,66 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "MookHMC",
+      "persistentUuid": "29551ef4-303a-46c8-8a08-3587ee63173a",
+      "width": 0,
+      "x": 695,
+      "y": 450,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "MookHMC",
+      "persistentUuid": "7d422def-67db-4314-8c2b-5a08575eb47f",
+      "width": 0,
+      "x": 675,
+      "y": 300,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "CollisionBox",
+      "persistentUuid": "7fe8f739-b6c0-4287-9e3f-ccc6a7e39f02",
+      "width": 0,
+      "x": 275,
+      "y": 475,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Player",
+      "persistentUuid": "f4c4ae2c-6fbd-4d3c-bbe0-a573aa96b826",
+      "width": 0,
+      "x": 500,
+      "y": 500,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -1266,6 +1311,55 @@
         "bottomFaceResourceRepeat": false,
         "materialType": "StandardWithoutMetalness"
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Player",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "CharacterController",
+          "type": "GameScripts::CharacterController",
+          "HeadWidth": 17,
+          "HeadHeight": 17,
+          "HeadDepth": 20,
+          "HeadName": "Default",
+          "BodyName": "Default",
+          "Control": "PLAYER",
+          "BodyWidth": 20,
+          "BodyHeight": 20,
+          "BodyDepth": 30
+        }
+      ],
+      "content": {
+        "width": 30,
+        "height": 30,
+        "depth": 30,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Y",
+        "frontFaceResourceName": "",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1279,6 +1373,9 @@
       },
       {
         "objectName": "Door"
+      },
+      {
+        "objectName": "Player"
       }
     ]
   },
@@ -1289,6 +1386,87 @@
         "includeConfig": 0
       },
       "target": "Player controller"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "GameScripts::CharacterController::Initialize"
+          },
+          "parameters": [
+            "Player",
+            "CharacterController",
+            "HeadDefault",
+            "BodyDefault",
+            "CollisionBox",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "GameScripts::CharacterController::Initialize"
+              },
+              "parameters": [
+                "MookHMC",
+                "CharacterController",
+                "HeadHMC",
+                "BodyDefault",
+                "CollisionBox",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "GameScripts::CharacterController::Update"
+          },
+          "parameters": [
+            "Player",
+            "CharacterController",
+            "Heads",
+            "Bodies",
+            "CollisionBox",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "GameScripts::CharacterController::Update"
+          },
+          "parameters": [
+            "MookHMC",
+            "CharacterController",
+            "Heads",
+            "Bodies",
+            "CollisionBox",
+            ""
+          ]
+        }
+      ]
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1317,6 +1495,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
@@ -1429,6 +1612,10 @@
     }
   ],
   "behaviorsSharedData": [
+    {
+      "name": "CharacterController",
+      "type": "GameScripts::CharacterController"
+    },
     {
       "name": "Flippable",
       "type": "FlippableCapability::FlippableBehavior"

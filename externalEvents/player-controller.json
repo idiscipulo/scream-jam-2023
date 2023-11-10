@@ -230,7 +230,7 @@
             "value": "SetCenter"
           },
           "parameters": [
-            "BodyBox",
+            "CollisionBox",
             "=",
             "Camera.CenterX()",
             "=",
@@ -242,7 +242,7 @@
             "value": "SetAngle"
           },
           "parameters": [
-            "BodyBox",
+            "CollisionBox",
             "=",
             "Camera.Angle()"
           ]
@@ -257,8 +257,8 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "BodyBox",
-            "Collidable",
+            "CollisionBox",
+            "Collision",
             "",
             "",
             ""
@@ -271,8 +271,8 @@
             "value": "SeparateFromObjects"
           },
           "parameters": [
-            "BodyBox",
-            "Collidable",
+            "CollisionBox",
+            "Collision",
             "yes"
           ]
         }
@@ -289,9 +289,9 @@
           "parameters": [
             "Camera",
             "=",
-            "BodyBox.CenterX()",
+            "CollisionBox.CenterX()",
             "=",
-            "BodyBox.CenterY()"
+            "CollisionBox.CenterY()"
           ]
         }
       ]

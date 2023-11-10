@@ -74,20 +74,6 @@
         "userAdded": true
       },
       {
-        "file": "fonts/Hey August.ttf",
-        "kind": "font",
-        "metadata": "",
-        "name": "fonts\\Hey August.ttf",
-        "userAdded": true
-      },
-      {
-        "file": "fonts/IcesWhenReal-Regular.ttf",
-        "kind": "font",
-        "metadata": "",
-        "name": "fonts\\IcesWhenReal-Regular.ttf",
-        "userAdded": true
-      },
-      {
         "alwaysLoaded": false,
         "file": "textures/floor.png",
         "kind": "image",
@@ -111,6 +97,33 @@
         "kind": "image",
         "metadata": "",
         "name": "textures\\door.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/heads/default.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\heads\\default.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/bodies/default.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\bodies\\default.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/heads/hmc_mook.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\heads\\hmc_mook.png",
         "smoothed": true,
         "userAdded": true
       }
@@ -155,17 +168,135 @@
     },
     {
       "assetStoreId": "",
-      "name": "BodyBox",
+      "name": "CollisionBox",
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
       "behaviors": [],
       "content": {
-        "width": 30,
-        "height": 30,
+        "width": 20,
+        "height": 20,
         "depth": 50,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
+        "frontFaceResourceName": "",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": false,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "BodyDefault",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 100,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\bodies\\default.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\bodies\\default.png",
+        "rightFaceResourceName": "textures\\bodies\\default.png",
+        "topFaceResourceName": "textures\\bodies\\default.png",
+        "bottomFaceResourceName": "textures\\bodies\\default.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "HeadDefault",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 100,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\heads\\default.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\heads\\default.png",
+        "rightFaceResourceName": "textures\\heads\\default.png",
+        "topFaceResourceName": "textures\\heads\\default.png",
+        "bottomFaceResourceName": "textures\\heads\\default.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "MookHMC",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "CharacterController",
+          "type": "GameScripts::CharacterController",
+          "HeadWidth": 17,
+          "HeadHeight": 17,
+          "HeadDepth": 20,
+          "BodyWidth": 20,
+          "BodyHeight": 20,
+          "BodyDepth": 30,
+          "HeadName": "HMC",
+          "BodyName": "Default"
+        }
+      ],
+      "content": {
+        "width": 30,
+        "height": 30,
+        "depth": 30,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Y",
         "frontFaceResourceName": "",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
@@ -187,6 +318,41 @@
         "bottomFaceResourceRepeat": false,
         "materialType": "Basic"
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "HeadHMC",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "width": 100,
+        "height": 100,
+        "depth": 100,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "rightFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "topFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "bottomFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -196,19 +362,65 @@
         "objectName": "Camera"
       },
       {
-        "objectName": "BodyBox"
+        "objectName": "CollisionBox"
+      },
+      {
+        "folderName": "Mooks",
+        "children": [
+          {
+            "objectName": "MookHMC"
+          }
+        ]
+      },
+      {
+        "folderName": "Heads",
+        "children": [
+          {
+            "objectName": "HeadHMC"
+          },
+          {
+            "objectName": "HeadDefault"
+          }
+        ]
+      },
+      {
+        "folderName": "Bodies",
+        "children": [
+          {
+            "objectName": "BodyDefault"
+          }
+        ]
       }
     ]
   },
   "objectsGroups": [
     {
-      "name": "Collidable",
+      "name": "Collision",
       "objects": [
         {
           "name": "Wall"
         },
         {
           "name": "Door"
+        }
+      ]
+    },
+    {
+      "name": "Heads",
+      "objects": [
+        {
+          "name": "HeadDefault"
+        },
+        {
+          "name": "HeadHMC"
+        }
+      ]
+    },
+    {
+      "name": "Bodies",
+      "objects": [
+        {
+          "name": "BodyDefault"
         }
       ]
     }
