@@ -27,23 +27,6 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 30,
-      "height": 30,
-      "layer": "",
-      "name": "Camera",
-      "persistentUuid": "89bada86-ef3a-4eb9-8a4b-edb6b9cd495f",
-      "width": 30,
-      "x": 345,
-      "y": 445,
-      "z": 40,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
       "depth": 70,
       "height": 25,
       "layer": "",
@@ -1161,8 +1144,8 @@
       "name": "Player",
       "persistentUuid": "f4c4ae2c-6fbd-4d3c-bbe0-a573aa96b826",
       "width": 0,
-      "x": 500,
-      "y": 500,
+      "x": 270,
+      "y": 445,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
@@ -1311,55 +1294,6 @@
         "bottomFaceResourceRepeat": false,
         "materialType": "StandardWithoutMetalness"
       }
-    },
-    {
-      "assetStoreId": "",
-      "name": "Player",
-      "type": "Scene3D::Cube3DObject",
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "CharacterController",
-          "type": "GameScripts::CharacterController",
-          "HeadWidth": 17,
-          "HeadHeight": 17,
-          "HeadDepth": 20,
-          "HeadName": "Default",
-          "BodyName": "Default",
-          "Control": "PLAYER",
-          "BodyWidth": 20,
-          "BodyHeight": 20,
-          "BodyDepth": 30
-        }
-      ],
-      "content": {
-        "width": 30,
-        "height": 30,
-        "depth": 30,
-        "enableTextureTransparency": false,
-        "facesOrientation": "Y",
-        "frontFaceResourceName": "",
-        "backFaceResourceName": "",
-        "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "",
-        "rightFaceResourceName": "",
-        "topFaceResourceName": "",
-        "bottomFaceResourceName": "",
-        "frontFaceVisible": true,
-        "backFaceVisible": false,
-        "leftFaceVisible": false,
-        "rightFaceVisible": false,
-        "topFaceVisible": false,
-        "bottomFaceVisible": false,
-        "frontFaceResourceRepeat": false,
-        "backFaceResourceRepeat": false,
-        "leftFaceResourceRepeat": false,
-        "rightFaceResourceRepeat": false,
-        "topFaceResourceRepeat": false,
-        "bottomFaceResourceRepeat": false,
-        "materialType": "Basic"
-      }
     }
   ],
   "objectsFolderStructure": {
@@ -1373,47 +1307,86 @@
       },
       {
         "objectName": "Door"
-      },
-      {
-        "objectName": "Player"
       }
     ]
   },
   "events": [
     {
-      "type": "BuiltinCommonInstructions::Link",
-      "include": {
-        "includeConfig": 0
-      },
-      "target": "Player controller"
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Start",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "GameScripts::CharacterNode::Initialize"
+                  },
+                  "parameters": [
+                    "Player",
+                    "CharacterController",
+                    "HeadDefault",
+                    "BodyDefault",
+                    "Pistol",
+                    "CollisionBox",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "GameScripts::CharacterNode::Initialize"
+                  },
+                  "parameters": [
+                    "MookHMC",
+                    "CharacterController",
+                    "HeadHMC",
+                    "BodyDefault",
+                    "Pistol",
+                    "CollisionBox",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "DepartScene"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "GameScripts::CharacterController::Initialize"
-          },
-          "parameters": [
-            "Player",
-            "CharacterController",
-            "HeadDefault",
-            "BodyDefault",
-            "CollisionBox",
-            ""
-          ]
-        }
-      ],
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Update",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1421,85 +1394,374 @@
           "actions": [
             {
               "type": {
-                "value": "GameScripts::CharacterController::Initialize"
+                "value": "GameScripts::CharacterNode::Update"
+              },
+              "parameters": [
+                "Player",
+                "CharacterController",
+                "Heads",
+                "Bodies",
+                "Items",
+                "CollisionBox",
+                "Collision",
+                "Collision"
+              ]
+            },
+            {
+              "type": {
+                "value": "GameScripts::CharacterNode::Update"
               },
               "parameters": [
                 "MookHMC",
                 "CharacterController",
-                "HeadHMC",
-                "BodyDefault",
+                "Heads",
+                "Bodies",
+                "Items",
                 "CollisionBox",
+                "Collision",
+                "Collision"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Raycaster3D::RaycastFromCameraCenter"
+              },
+              "parameters": [
+                "",
+                "Door",
+                "200",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "GameScripts::SlidingDoor::Open"
+              },
+              "parameters": [
+                "Door",
+                "SlidingDoor",
                 ""
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "GameScripts::CharacterController::Update"
-          },
-          "parameters": [
-            "Player",
-            "CharacterController",
-            "Heads",
-            "Bodies",
-            "CollisionBox",
-            ""
-          ]
         },
         {
-          "type": {
-            "value": "GameScripts::CharacterController::Update"
-          },
-          "parameters": [
-            "MookHMC",
-            "CharacterController",
-            "Heads",
-            "Bodies",
-            "CollisionBox",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+          "colorB": 194,
+          "colorG": 227,
+          "colorR": 80,
+          "creationTime": 0,
+          "name": "Player Control",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MousePointerLock::isPointerLocked"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::RequestPointerLock"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Items",
+                    "Player",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Items"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::isPointerLocked"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Player",
+                    "+",
+                    "MousePointerLock::MovementX() / 20"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Player.Angle()",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Player.Angle() + 90",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Player.Angle() + 180",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Player.Angle() + 270",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Heads",
+                    "Player",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::isPointerLocked"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationY"
+                      },
+                      "parameters": [
+                        "Heads",
+                        "Object3D",
+                        "+",
+                        "MousePointerLock::MovementY() / 20"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationY"
+                      },
+                      "parameters": [
+                        "Heads",
+                        "Object3D",
+                        "=",
+                        "clamp(Heads.RotationY(), -90, 90)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FirstPersonCamera::LookFromObjectEyes"
+                      },
+                      "parameters": [
+                        "",
+                        "Heads",
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
         {
-          "type": {
-            "value": "Raycaster3D::RaycastFromCameraCenter"
-          },
-          "parameters": [
-            "",
-            "Door",
-            "200",
-            ""
-          ]
+          "colorB": 27,
+          "colorG": 2,
+          "colorR": 208,
+          "creationTime": 0,
+          "name": "Enemy Control",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RotateTowardPosition"
+                  },
+                  "parameters": [
+                    "Mooks",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    "0",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "GameScripts::SlidingDoor::Open"
-          },
-          "parameters": [
-            "Door",
-            "SlidingDoor",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
+      "parameters": []
     }
   ],
   "layers": [
@@ -1614,7 +1876,7 @@
   "behaviorsSharedData": [
     {
       "name": "CharacterController",
-      "type": "GameScripts::CharacterController"
+      "type": "GameScripts::CharacterNode"
     },
     {
       "name": "Flippable",

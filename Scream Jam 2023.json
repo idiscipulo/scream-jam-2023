@@ -126,46 +126,47 @@
         "name": "textures\\heads\\hmc_mook.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/items/gunmetal_pistol.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\items\\gunmetal_pistol.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/skin_default.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\skin_default.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/hmc_red.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\hmc_red.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/gunmetal_pistol.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\gunmetal_pistol.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
   },
   "objects": [
-    {
-      "assetStoreId": "",
-      "name": "Camera",
-      "type": "Scene3D::Cube3DObject",
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "content": {
-        "width": 50,
-        "height": 50,
-        "depth": 50,
-        "enableTextureTransparency": false,
-        "facesOrientation": "Z",
-        "frontFaceResourceName": "camera.png",
-        "backFaceResourceName": "",
-        "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "",
-        "rightFaceResourceName": "",
-        "topFaceResourceName": "",
-        "bottomFaceResourceName": "",
-        "frontFaceVisible": true,
-        "backFaceVisible": false,
-        "leftFaceVisible": false,
-        "rightFaceVisible": false,
-        "topFaceVisible": false,
-        "bottomFaceVisible": false,
-        "frontFaceResourceRepeat": false,
-        "backFaceResourceRepeat": false,
-        "leftFaceResourceRepeat": false,
-        "rightFaceResourceRepeat": false,
-        "topFaceResourceRepeat": false,
-        "bottomFaceResourceRepeat": false,
-        "materialType": "Basic"
-      }
-    },
     {
       "assetStoreId": "",
       "name": "CollisionBox",
@@ -207,20 +208,30 @@
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Movable",
+          "type": "Movement3D::Movable",
+          "Speed": 30,
+          "TargetX": 30,
+          "TargetY": 30,
+          "TargetZ": 30,
+          "Target": false
+        }
+      ],
       "content": {
-        "width": 100,
-        "height": 100,
-        "depth": 100,
+        "width": 20,
+        "height": 20,
+        "depth": 30,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
-        "frontFaceResourceName": "textures\\bodies\\default.png",
+        "frontFaceResourceName": "textures\\skin_default.png",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "textures\\bodies\\default.png",
-        "rightFaceResourceName": "textures\\bodies\\default.png",
-        "topFaceResourceName": "textures\\bodies\\default.png",
-        "bottomFaceResourceName": "textures\\bodies\\default.png",
+        "leftFaceResourceName": "textures\\skin_default.png",
+        "rightFaceResourceName": "textures\\skin_default.png",
+        "topFaceResourceName": "textures\\skin_default.png",
+        "bottomFaceResourceName": "textures\\skin_default.png",
         "frontFaceVisible": true,
         "backFaceVisible": false,
         "leftFaceVisible": true,
@@ -242,20 +253,30 @@
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Movable",
+          "type": "Movement3D::Movable",
+          "Speed": 30,
+          "TargetX": 30,
+          "TargetY": 30,
+          "TargetZ": 30,
+          "Target": false
+        }
+      ],
       "content": {
-        "width": 100,
-        "height": 100,
-        "depth": 100,
+        "width": 17,
+        "height": 17,
+        "depth": 20,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
-        "frontFaceResourceName": "textures\\heads\\default.png",
+        "frontFaceResourceName": "textures\\skin_default.png",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "textures\\heads\\default.png",
-        "rightFaceResourceName": "textures\\heads\\default.png",
-        "topFaceResourceName": "textures\\heads\\default.png",
-        "bottomFaceResourceName": "textures\\heads\\default.png",
+        "leftFaceResourceName": "textures\\skin_default.png",
+        "rightFaceResourceName": "textures\\skin_default.png",
+        "topFaceResourceName": "textures\\skin_default.png",
+        "bottomFaceResourceName": "textures\\skin_default.png",
         "frontFaceVisible": true,
         "backFaceVisible": false,
         "leftFaceVisible": true,
@@ -280,7 +301,7 @@
       "behaviors": [
         {
           "name": "CharacterController",
-          "type": "GameScripts::CharacterController",
+          "type": "GameScripts::CharacterNode",
           "HeadWidth": 17,
           "HeadHeight": 17,
           "HeadDepth": 20,
@@ -288,7 +309,9 @@
           "BodyHeight": 20,
           "BodyDepth": 30,
           "HeadName": "HMC",
-          "BodyName": "Default"
+          "BodyName": "Default",
+          "Equipped": "Pistol",
+          "Control": "Enemy_Basic"
         }
       ],
       "content": {
@@ -325,20 +348,124 @@
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Movable",
+          "type": "Movement3D::Movable",
+          "Speed": 30,
+          "TargetX": 30,
+          "TargetY": 30,
+          "TargetZ": 30,
+          "Target": false
+        }
+      ],
       "content": {
-        "width": 100,
-        "height": 100,
-        "depth": 100,
+        "width": 17,
+        "height": 17,
+        "depth": 20,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
-        "frontFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "frontFaceResourceName": "textures\\hmc_red.png",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "textures\\heads\\hmc_mook.png",
-        "rightFaceResourceName": "textures\\heads\\hmc_mook.png",
-        "topFaceResourceName": "textures\\heads\\hmc_mook.png",
-        "bottomFaceResourceName": "textures\\heads\\hmc_mook.png",
+        "leftFaceResourceName": "textures\\hmc_red.png",
+        "rightFaceResourceName": "textures\\hmc_red.png",
+        "topFaceResourceName": "textures\\hmc_red.png",
+        "bottomFaceResourceName": "textures\\hmc_red.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Player",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "CharacterController",
+          "type": "GameScripts::CharacterNode",
+          "HeadWidth": 17,
+          "HeadHeight": 17,
+          "HeadDepth": 20,
+          "HeadName": "Default",
+          "BodyName": "Default",
+          "Control": "PLAYER",
+          "BodyWidth": 20,
+          "BodyHeight": 20,
+          "BodyDepth": 30
+        }
+      ],
+      "content": {
+        "width": 30,
+        "height": 30,
+        "depth": 30,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Y",
+        "frontFaceResourceName": "",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "",
+        "rightFaceResourceName": "",
+        "topFaceResourceName": "",
+        "bottomFaceResourceName": "",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": false,
+        "rightFaceVisible": false,
+        "topFaceVisible": false,
+        "bottomFaceVisible": false,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "Basic"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Pistol",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Movable",
+          "type": "Movement3D::Movable",
+          "Speed": 30,
+          "TargetX": 30,
+          "TargetY": 30,
+          "TargetZ": 30,
+          "Target": false
+        }
+      ],
+      "content": {
+        "width": 15,
+        "height": 5,
+        "depth": 10,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\gunmetal_pistol.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\gunmetal_pistol.png",
+        "rightFaceResourceName": "textures\\gunmetal_pistol.png",
+        "topFaceResourceName": "textures\\gunmetal_pistol.png",
+        "bottomFaceResourceName": "textures\\gunmetal_pistol.png",
         "frontFaceVisible": true,
         "backFaceVisible": false,
         "leftFaceVisible": true,
@@ -359,16 +486,24 @@
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "Camera"
+        "objectName": "CollisionBox"
       },
       {
-        "objectName": "CollisionBox"
+        "objectName": "Player"
       },
       {
         "folderName": "Mooks",
         "children": [
           {
             "objectName": "MookHMC"
+          }
+        ]
+      },
+      {
+        "folderName": "Items",
+        "children": [
+          {
+            "objectName": "Pistol"
           }
         ]
       },
@@ -406,6 +541,22 @@
       ]
     },
     {
+      "name": "Mooks",
+      "objects": [
+        {
+          "name": "MookHMC"
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "objects": [
+        {
+          "name": "Pistol"
+        }
+      ]
+    },
+    {
       "name": "Heads",
       "objects": [
         {
@@ -432,12 +583,7 @@
       "referenceTo": "/layouts/untitled-scene"
     }
   ],
-  "externalEvents": [
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalEvents/player-controller"
-    }
-  ],
+  "externalEvents": [],
   "eventsFunctionsExtensions": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

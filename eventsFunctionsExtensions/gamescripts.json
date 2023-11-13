@@ -228,14 +228,14 @@
     {
       "description": "Controlls the body, head, and movement of a character",
       "fullName": "Character Controller",
-      "name": "CharacterController",
+      "name": "CharacterNode",
       "objectType": "Scene3D::Cube3DObject",
       "eventsFunctions": [
         {
           "fullName": "Initialize the object",
           "functionType": "Action",
           "name": "Initialize",
-          "sentence": "Initialize _PARAM0_ given (_PARAM2_, _PARAM3_, _PARAM4_)",
+          "sentence": "Initialize _PARAM0_ with head _PARAM2_, body _PARAM3_, item _PARAM4_, and collision box _PARAM5_",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -269,39 +269,6 @@
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "Body",
-                    "Resizable",
-                    "=",
-                    "Object.Behavior::PropertyBodyWidth()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                  },
-                  "parameters": [
-                    "Body",
-                    "Resizable",
-                    "=",
-                    "Object.Behavior::PropertyBodyHeight()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetDepth"
-                  },
-                  "parameters": [
-                    "Body",
-                    "Object3D",
-                    "=",
-                    "Object.Behavior::PropertyBodyDepth()"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "LinkedObjects::LinkObjects"
                   },
                   "parameters": [
@@ -326,39 +293,6 @@
                     "Object.X()",
                     "Object.Y()",
                     "Object.Layer()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "Head",
-                    "Resizable",
-                    "=",
-                    "Object.Behavior::PropertyHeadWidth()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                  },
-                  "parameters": [
-                    "Head",
-                    "Resizable",
-                    "=",
-                    "Object.Behavior::PropertyHeadHeight()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetDepth"
-                  },
-                  "parameters": [
-                    "Head",
-                    "Object3D",
-                    "=",
-                    "Object.Behavior::PropertyHeadDepth()"
                   ]
                 },
                 {
@@ -394,6 +328,45 @@
                   },
                   "parameters": [
                     "",
+                    "Item",
+                    "Object.X()",
+                    "Object.Y()",
+                    "Object.Layer()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Item",
+                    "Object3D",
+                    "=",
+                    "Body.Depth() / 2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "Item"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
                     "CollisionBox",
                     "Object.X()",
                     "Object.Y()",
@@ -408,7 +381,7 @@
                     "CollisionBox",
                     "Resizable",
                     "=",
-                    "max(Object.Behavior::PropertyHeadWidth(), Object.Behavior::PropertyBodyWidth())"
+                    "max(Body.Width(), Head.Width())"
                   ]
                 },
                 {
@@ -419,7 +392,7 @@
                     "CollisionBox",
                     "Resizable",
                     "=",
-                    "max(Object.Behavior::PropertyHeadHeight(), Object.Behavior::PropertyBodyHeight())"
+                    "max(Body.Height(), Head.Height())"
                   ]
                 },
                 {
@@ -430,7 +403,7 @@
                     "CollisionBox",
                     "Object3D",
                     "=",
-                    "Object.Behavior::PropertyHeadDepth() + Object.Behavior::PropertyBodyDepth()"
+                    "Body.Depth() + Head.Depth()"
                   ]
                 },
                 {
@@ -456,7 +429,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "GameScripts::CharacterController",
+              "supplementaryInformation": "GameScripts::CharacterNode",
               "type": "behavior"
             },
             {
@@ -468,6 +441,12 @@
             {
               "description": "Body",
               "name": "Body",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Equipped Item",
+              "name": "Item",
               "supplementaryInformation": "Scene3D::Cube3DObject",
               "type": "objectList"
             },
@@ -485,28 +464,32 @@
           "fullName": "Update the object",
           "functionType": "Action",
           "name": "Update",
-          "sentence": "Update _PARAM0_ given (_PARAM2_, _PARAM3_, _PARAM4_)",
+          "sentence": "Update _PARAM0_ with head _PARAM2_, body _PARAM3_, items _PARAM4_ and collision box _PARAM5_. Update in respect to collision group _PARAM6_",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "Heads",
-                    "Object",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [],
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Build object from parts",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Heads",
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
@@ -527,102 +510,195 @@
                       "parameters": [
                         "Heads",
                         "Object.Angle()",
-                        "40",
+                        "300",
                         ""
                       ]
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "Bodies",
-                    "Object",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "Bodies",
-                        "=",
-                        "Object.CenterX()",
-                        "=",
-                        "Object.CenterY()"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "RotateTowardAngle"
-                      },
-                      "parameters": [
-                        "Bodies",
-                        "Object.Angle()",
-                        "30",
-                        ""
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "CollisionBox",
-                    "Object",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetCenter"
-                  },
-                  "parameters": [
-                    "CollisionBox",
-                    "=",
-                    "Object.CenterX()",
-                    "=",
-                    "Object.CenterY()"
                   ]
                 },
                 {
-                  "type": {
-                    "value": "RotateTowardAngle"
-                  },
-                  "parameters": [
-                    "CollisionBox",
-                    "Object.Angle()",
-                    "20",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Bodies",
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetCenter"
+                      },
+                      "parameters": [
+                        "Bodies",
+                        "=",
+                        "Object.CenterX()",
+                        "=",
+                        "Object.CenterY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Bodies",
+                        "Object.Angle()",
+                        "90",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "LinkedObjects::PickObjectsLinkedTo"
+                          },
+                          "parameters": [
+                            "",
+                            "Items",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenterX"
+                          },
+                          "parameters": [
+                            "Items",
+                            "=",
+                            "Object.CenterX() + (cos(ToRad(Bodies.Angle() + 30)) * 20)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenterY"
+                          },
+                          "parameters": [
+                            "Items",
+                            "=",
+                            "Object.CenterY() + (sin(ToRad(Bodies.Angle() + 30)) * 20)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Items",
+                            "=",
+                            "Bodies.Angle()"
+                          ]
+                        }
+                      ]
+                    }
                   ]
                 }
-              ]
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 226,
+              "colorG": 144,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Collision",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetCenter"
+                      },
+                      "parameters": [
+                        "CollisionBox",
+                        "=",
+                        "Object.CenterX()",
+                        "=",
+                        "Object.CenterY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "CollisionBox",
+                        "Object.Angle()",
+                        "20",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "CollisionBox",
+                            "CollisionGroup",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SeparateFromObjects"
+                          },
+                          "parameters": [
+                            "CollisionBox",
+                            "CollisionGroup",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "CollisionBox.CenterX()",
+                            "=",
+                            "CollisionBox.CenterY()"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
             }
           ],
           "parameters": [
@@ -635,25 +711,36 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "GameScripts::CharacterController",
+              "supplementaryInformation": "GameScripts::CharacterNode",
               "type": "behavior"
             },
             {
-              "description": "Heads",
+              "description": "Head Group",
               "name": "Heads",
               "supplementaryInformation": "Scene3D::Cube3DObject",
               "type": "objectList"
             },
             {
-              "description": "Bodies",
+              "description": "Body Group",
               "name": "Bodies",
               "supplementaryInformation": "Scene3D::Cube3DObject",
               "type": "objectList"
             },
             {
-              "description": "",
+              "description": "Item Group",
+              "name": "Items",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Collision Box",
               "name": "CollisionBox",
               "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Collision Group",
+              "name": "CollisionGroup",
               "type": "objectList"
             }
           ],
@@ -662,103 +749,17 @@
       ],
       "propertyDescriptors": [
         {
-          "value": "MOOK_BASIC",
+          "value": "Player",
           "type": "Choice",
-          "label": "Character control",
+          "label": "Control of the object",
           "description": "",
-          "group": "Behavior",
+          "group": "",
           "extraInformation": [
-            "MOOK_BASIC",
-            "PLAYER"
+            "Player",
+            "Enemy_Basic"
           ],
           "hidden": false,
           "name": "Control"
-        },
-        {
-          "value": "Head Name",
-          "type": "String",
-          "label": "Head name",
-          "description": "",
-          "group": "Head Name",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "HeadName"
-        },
-        {
-          "value": "25",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Head width",
-          "description": "",
-          "group": "Head Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "HeadWidth"
-        },
-        {
-          "value": "25",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Head height",
-          "description": "",
-          "group": "Head Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "HeadHeight"
-        },
-        {
-          "value": "25",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Head depth",
-          "description": "",
-          "group": "Head Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "HeadDepth"
-        },
-        {
-          "value": "Default",
-          "type": "String",
-          "label": "Body name",
-          "description": "",
-          "group": "Body Name",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "BodyName"
-        },
-        {
-          "value": "30",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Body width",
-          "description": "",
-          "group": "Body Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "BodyWidth"
-        },
-        {
-          "value": "30",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Body height",
-          "description": "",
-          "group": "Body Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "BodyHeight"
-        },
-        {
-          "value": "50",
-          "type": "Number",
-          "unit": "Pixel",
-          "label": "Body depth",
-          "description": "",
-          "group": "Body Dimensions",
-          "extraInformation": [],
-          "hidden": false,
-          "name": "BodyDepth"
         }
       ],
       "sharedPropertyDescriptors": []

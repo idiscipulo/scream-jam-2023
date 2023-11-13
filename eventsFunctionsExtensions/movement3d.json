@@ -294,6 +294,88 @@
             }
           ],
           "objectGroups": []
+        },
+        {
+          "fullName": "Put the object around another (3D)",
+          "functionType": "Action",
+          "group": "POSITION",
+          "name": "PutTheObjectAroundAnother",
+          "sentence": "Put _PARAM0_ around _PARAM2_, with an angle of _PARAM4_ degrees, an elevation angle of _PARAM5_ degrees, and _PARAM3_ pixels distance.",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "Center.CenterX() + cos(ToRad(Angle)) * (cos(ToRad(ElevationAngle)) * Distance)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "Center.CenterY() + sin(ToRad(Angle)) * (cos(ToRad(ElevationAngle)) * Distance)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object3D",
+                    "=",
+                    "Center.Z() + (sin(ToRad(ElevationAngle)) * Distance)"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "Movement3D::Movable",
+              "type": "behavior"
+            },
+            {
+              "description": "\"Center\" Object",
+              "name": "Center",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Distance",
+              "name": "Distance",
+              "type": "expression"
+            },
+            {
+              "description": "Angle, in degrees",
+              "name": "Angle",
+              "type": "expression"
+            },
+            {
+              "description": "Elevation angle, in degrees",
+              "name": "ElevationAngle",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
         }
       ],
       "propertyDescriptors": [
