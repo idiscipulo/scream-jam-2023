@@ -58,19 +58,7 @@
               "parameters": [
                 "",
                 "=",
-                "Object.Z()",
-                "GetArgumentAsString(\"Layer\")",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Scene3D::SetCameraZ"
-              },
-              "parameters": [
-                "",
-                "=",
-                "Object.Z()",
+                "Object.Object3D::CenterZ()",
                 "GetArgumentAsString(\"Layer\")",
                 ""
               ]

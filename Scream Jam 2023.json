@@ -66,15 +66,6 @@
     "resources": [
       {
         "alwaysLoaded": false,
-        "file": "camera.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "camera.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "textures/floor.png",
         "kind": "image",
         "metadata": "",
@@ -102,42 +93,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "textures/heads/default.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "textures\\heads\\default.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "textures/bodies/default.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "textures\\bodies\\default.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "textures/heads/hmc_mook.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "textures\\heads\\hmc_mook.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "textures/items/gunmetal_pistol.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "textures\\items\\gunmetal_pistol.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "textures/skin_default.png",
         "kind": "image",
         "metadata": "",
@@ -147,21 +102,30 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "textures/hmc_red.png",
+        "file": "textures/head_anf_armor.png",
         "kind": "image",
         "metadata": "",
-        "name": "textures\\hmc_red.png",
+        "name": "textures/head_anf_armor.png",
         "smoothed": true,
         "userAdded": false
       },
       {
         "alwaysLoaded": false,
-        "file": "textures/gunmetal_pistol.png",
+        "file": "textures/gun_default.png",
         "kind": "image",
         "metadata": "",
-        "name": "textures\\gunmetal_pistol.png",
+        "name": "textures\\gun_default.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "textures/body_anf_armor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "textures\\body_anf_armor.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -171,7 +135,14 @@
       "assetStoreId": "",
       "name": "CollisionBox",
       "type": "Scene3D::Cube3DObject",
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "ID",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "content": {
@@ -211,7 +182,7 @@
       "behaviors": [
         {
           "name": "Movable",
-          "type": "Movement3D::Movable",
+          "type": "CustomBehaviors::Movable",
           "Speed": 30,
           "TargetX": 30,
           "TargetY": 30,
@@ -256,7 +227,7 @@
       "behaviors": [
         {
           "name": "Movable",
-          "type": "Movement3D::Movable",
+          "type": "CustomBehaviors::Movable",
           "Speed": 30,
           "TargetX": 30,
           "TargetY": 30,
@@ -294,24 +265,15 @@
     },
     {
       "assetStoreId": "",
-      "name": "MookHMC",
+      "name": "MookANF",
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
       "behaviors": [
         {
-          "name": "CharacterController",
-          "type": "GameScripts::CharacterNode",
-          "HeadWidth": 17,
-          "HeadHeight": 17,
-          "HeadDepth": 20,
-          "BodyWidth": 20,
-          "BodyHeight": 20,
-          "BodyDepth": 30,
-          "HeadName": "HMC",
-          "BodyName": "Default",
-          "Equipped": "Pistol",
-          "Control": "Enemy_Basic"
+          "name": "Character",
+          "type": "CustomBehaviors::Character",
+          "Control": "Enemy"
         }
       ],
       "content": {
@@ -344,14 +306,14 @@
     },
     {
       "assetStoreId": "",
-      "name": "HeadHMC",
+      "name": "HeadANFArmor",
       "type": "Scene3D::Cube3DObject",
       "variables": [],
       "effects": [],
       "behaviors": [
         {
           "name": "Movable",
-          "type": "Movement3D::Movable",
+          "type": "CustomBehaviors::Movable",
           "Speed": 30,
           "TargetX": 30,
           "TargetY": 30,
@@ -365,13 +327,13 @@
         "depth": 20,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
-        "frontFaceResourceName": "textures\\hmc_red.png",
+        "frontFaceResourceName": "textures/head_anf_armor.png",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "textures\\hmc_red.png",
-        "rightFaceResourceName": "textures\\hmc_red.png",
-        "topFaceResourceName": "textures\\hmc_red.png",
-        "bottomFaceResourceName": "textures\\hmc_red.png",
+        "leftFaceResourceName": "textures/head_anf_armor.png",
+        "rightFaceResourceName": "textures/head_anf_armor.png",
+        "topFaceResourceName": "textures/head_anf_armor.png",
+        "bottomFaceResourceName": "textures/head_anf_armor.png",
         "frontFaceVisible": true,
         "backFaceVisible": false,
         "leftFaceVisible": true,
@@ -391,21 +353,20 @@
       "assetStoreId": "",
       "name": "Player",
       "type": "Scene3D::Cube3DObject",
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "Interact",
+          "type": "boolean",
+          "value": false
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
-          "name": "CharacterController",
-          "type": "GameScripts::CharacterNode",
-          "HeadWidth": 17,
-          "HeadHeight": 17,
-          "HeadDepth": 20,
-          "HeadName": "Default",
-          "BodyName": "Default",
-          "Control": "PLAYER",
-          "BodyWidth": 20,
-          "BodyHeight": 20,
-          "BodyDepth": 30
+          "name": "Character",
+          "type": "CustomBehaviors::Character",
+          "Control": "Player"
         }
       ],
       "content": {
@@ -444,13 +405,8 @@
       "effects": [],
       "behaviors": [
         {
-          "name": "Movable",
-          "type": "Movement3D::Movable",
-          "Speed": 30,
-          "TargetX": 30,
-          "TargetY": 30,
-          "TargetZ": 30,
-          "Target": false
+          "name": "Item",
+          "type": "CustomBehaviors::Item"
         }
       ],
       "content": {
@@ -459,13 +415,58 @@
         "depth": 10,
         "enableTextureTransparency": false,
         "facesOrientation": "Z",
-        "frontFaceResourceName": "textures\\gunmetal_pistol.png",
+        "frontFaceResourceName": "textures\\gun_default.png",
         "backFaceResourceName": "",
         "backFaceUpThroughWhichAxisRotation": "X",
-        "leftFaceResourceName": "textures\\gunmetal_pistol.png",
-        "rightFaceResourceName": "textures\\gunmetal_pistol.png",
-        "topFaceResourceName": "textures\\gunmetal_pistol.png",
-        "bottomFaceResourceName": "textures\\gunmetal_pistol.png",
+        "leftFaceResourceName": "textures\\gun_default.png",
+        "rightFaceResourceName": "textures\\gun_default.png",
+        "topFaceResourceName": "textures\\gun_default.png",
+        "bottomFaceResourceName": "textures\\gun_default.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "BodyANFArmor",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Movable",
+          "type": "CustomBehaviors::Movable",
+          "Speed": 30,
+          "TargetX": 30,
+          "TargetY": 30,
+          "TargetZ": 30,
+          "Target": false
+        }
+      ],
+      "content": {
+        "width": 20,
+        "height": 20,
+        "depth": 30,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\body_anf_armor.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\body_anf_armor.png",
+        "rightFaceResourceName": "textures\\body_anf_armor.png",
+        "topFaceResourceName": "textures\\body_anf_armor.png",
+        "bottomFaceResourceName": "textures\\body_anf_armor.png",
         "frontFaceVisible": true,
         "backFaceVisible": false,
         "leftFaceVisible": true,
@@ -495,7 +496,7 @@
         "folderName": "Mooks",
         "children": [
           {
-            "objectName": "MookHMC"
+            "objectName": "MookANF"
           }
         ]
       },
@@ -511,7 +512,7 @@
         "folderName": "Heads",
         "children": [
           {
-            "objectName": "HeadHMC"
+            "objectName": "HeadANFArmor"
           },
           {
             "objectName": "HeadDefault"
@@ -523,6 +524,9 @@
         "children": [
           {
             "objectName": "BodyDefault"
+          },
+          {
+            "objectName": "BodyANFArmor"
           }
         ]
       }
@@ -537,6 +541,20 @@
         },
         {
           "name": "Door"
+        },
+        {
+          "name": "CollisionBox"
+        }
+      ]
+    },
+    {
+      "name": "Characters",
+      "objects": [
+        {
+          "name": "MookANF"
+        },
+        {
+          "name": "Player"
         }
       ]
     },
@@ -544,7 +562,7 @@
       "name": "Mooks",
       "objects": [
         {
-          "name": "MookHMC"
+          "name": "MookANF"
         }
       ]
     },
@@ -563,7 +581,7 @@
           "name": "HeadDefault"
         },
         {
-          "name": "HeadHMC"
+          "name": "HeadANFArmor"
         }
       ]
     },
@@ -572,6 +590,9 @@
       "objects": [
         {
           "name": "BodyDefault"
+        },
+        {
+          "name": "BodyANFArmor"
         }
       ]
     }
@@ -603,11 +624,7 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/movement3d"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/gamescripts"
+      "referenceTo": "/eventsFunctionsExtensions/custombehaviors"
     }
   ],
   "externalLayouts": [],

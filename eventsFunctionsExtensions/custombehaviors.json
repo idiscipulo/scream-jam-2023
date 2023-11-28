@@ -5,7 +5,7 @@
   "fullName": "",
   "helpPath": "",
   "iconUrl": "",
-  "name": "Movement3D",
+  "name": "CustomBehaviors",
   "previewIconUrl": "",
   "shortDescription": "",
   "version": "",
@@ -33,7 +33,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetX"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetX"
                   },
                   "parameters": [
                     "Object",
@@ -44,7 +44,7 @@
                 },
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetY"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetY"
                   },
                   "parameters": [
                     "Object",
@@ -55,7 +55,7 @@
                 },
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetZ"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetZ"
                   },
                   "parameters": [
                     "Object",
@@ -77,7 +77,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::Movable",
+              "supplementaryInformation": "CustomBehaviors::Movable",
               "type": "behavior"
             }
           ],
@@ -94,7 +94,7 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "Movement3D::Movable::PropertyTarget"
+                    "value": "CustomBehaviors::Movable::PropertyTarget"
                   },
                   "parameters": [
                     "Object",
@@ -174,7 +174,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTarget"
+                    "value": "CustomBehaviors::Movable::SetPropertyTarget"
                   },
                   "parameters": [
                     "Object",
@@ -195,7 +195,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::Movable",
+              "supplementaryInformation": "CustomBehaviors::Movable",
               "type": "behavior"
             }
           ],
@@ -214,7 +214,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTarget"
+                    "value": "CustomBehaviors::Movable::SetPropertyTarget"
                   },
                   "parameters": [
                     "Object",
@@ -230,7 +230,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetX"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetX"
                   },
                   "parameters": [
                     "Object",
@@ -241,7 +241,7 @@
                 },
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetY"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetY"
                   },
                   "parameters": [
                     "Object",
@@ -252,7 +252,7 @@
                 },
                 {
                   "type": {
-                    "value": "Movement3D::Movable::SetPropertyTargetZ"
+                    "value": "CustomBehaviors::Movable::SetPropertyTargetZ"
                   },
                   "parameters": [
                     "Object",
@@ -274,7 +274,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::Movable",
+              "supplementaryInformation": "CustomBehaviors::Movable",
               "type": "behavior"
             },
             {
@@ -350,7 +350,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::Movable",
+              "supplementaryInformation": "CustomBehaviors::Movable",
               "type": "behavior"
             },
             {
@@ -382,7 +382,7 @@
           "functionType": "Action",
           "group": "POSITION",
           "name": "RotateTheObjectAroundAnother",
-          "sentence": "Put _PARAM0_ around _PARAM2_, with an angle of _PARAM4_ degrees, an elevation angle of _PARAM5_ degrees, and _PARAM3_ pixels distance (OffsetX: _, OffsetY: _PARAM6_)",
+          "sentence": "Put _PARAM0_ around _PARAM2_, with a distance of _PARAM3_, an angle of _PARAM4_ degrees, and an elevation angle of _PARAM5_ degrees. Use an OffsetDistance of _PARAM6_ and an OffsetAngle of _PARAM7_.",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -395,7 +395,7 @@
                   "parameters": [
                     "Object",
                     "=",
-                    "Center.CenterX() + cos(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
+                    "(Center.CenterX() + cos(ToRad(Object.Angle() + OffsetAngle)) * OffsetDistance) + cos(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
                   ]
                 },
                 {
@@ -405,7 +405,7 @@
                   "parameters": [
                     "Object",
                     "=",
-                    "Center.CenterY() + sin(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
+                    "(Center.CenterY() + sin(ToRad(Object.Angle() + OffsetAngle)) * OffsetDistance) + sin(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
                   ]
                 },
                 {
@@ -432,7 +432,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::Movable",
+              "supplementaryInformation": "CustomBehaviors::Movable",
               "type": "behavior"
             },
             {
@@ -457,8 +457,13 @@
               "type": "expression"
             },
             {
-              "description": "OffsetY (Positive values move the arc to the right of the camera)",
-              "name": "OffsetY",
+              "description": "",
+              "name": "OffsetDistance",
+              "type": "expression"
+            },
+            {
+              "description": "",
+              "name": "OffsetAngle",
               "type": "expression"
             }
           ],
@@ -576,7 +581,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Movement3D::RotatingDoor::SetPropertyStartingAngle"
+                    "value": "CustomBehaviors::RotatingDoor::SetPropertyStartingAngle"
                   },
                   "parameters": [
                     "Object",
@@ -598,7 +603,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::RotatingDoor",
+              "supplementaryInformation": "CustomBehaviors::RotatingDoor",
               "type": "behavior"
             },
             {
@@ -622,7 +627,7 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "Movement3D::RotatingDoor::PropertyDirection"
+                    "value": "CustomBehaviors::RotatingDoor::PropertyDirection"
                   },
                   "parameters": [
                     "Object",
@@ -639,7 +644,7 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "Movement3D::RotatingDoor::PropertyOpen"
+                        "value": "CustomBehaviors::RotatingDoor::PropertyOpen"
                       },
                       "parameters": [
                         "Object",
@@ -676,7 +681,7 @@
                     {
                       "type": {
                         "inverted": true,
-                        "value": "Movement3D::RotatingDoor::PropertyOpen"
+                        "value": "CustomBehaviors::RotatingDoor::PropertyOpen"
                       },
                       "parameters": [
                         "Object",
@@ -750,7 +755,7 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "Movement3D::RotatingDoor::PropertyDirection"
+                    "value": "CustomBehaviors::RotatingDoor::PropertyDirection"
                   },
                   "parameters": [
                     "Object",
@@ -767,7 +772,7 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "Movement3D::RotatingDoor::PropertyOpen"
+                        "value": "CustomBehaviors::RotatingDoor::PropertyOpen"
                       },
                       "parameters": [
                         "Object",
@@ -804,7 +809,7 @@
                     {
                       "type": {
                         "inverted": true,
-                        "value": "Movement3D::RotatingDoor::PropertyOpen"
+                        "value": "CustomBehaviors::RotatingDoor::PropertyOpen"
                       },
                       "parameters": [
                         "Object",
@@ -884,7 +889,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::RotatingDoor",
+              "supplementaryInformation": "CustomBehaviors::RotatingDoor",
               "type": "behavior"
             },
             {
@@ -929,7 +934,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::RotatingDoor",
+              "supplementaryInformation": "CustomBehaviors::RotatingDoor",
               "type": "behavior"
             }
           ],
@@ -1053,7 +1058,7 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Movement3D::Movable::MoveTowardPosition"
+                        "value": "CustomBehaviors::Movable::MoveTowardPosition"
                       },
                       "parameters": [
                         "Object",
@@ -1084,7 +1089,7 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Movement3D::Movable::MoveTowardPosition"
+                        "value": "CustomBehaviors::Movable::MoveTowardPosition"
                       },
                       "parameters": [
                         "Object",
@@ -1115,7 +1120,7 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Movement3D::Movable::MoveTowardPosition"
+                        "value": "CustomBehaviors::Movable::MoveTowardPosition"
                       },
                       "parameters": [
                         "Object",
@@ -1146,7 +1151,7 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Movement3D::Movable::MoveTowardPosition"
+                        "value": "CustomBehaviors::Movable::MoveTowardPosition"
                       },
                       "parameters": [
                         "Object",
@@ -1172,7 +1177,7 @@
             {
               "description": "Behavior",
               "name": "Behavior",
-              "supplementaryInformation": "Movement3D::SlidingDoor",
+              "supplementaryInformation": "CustomBehaviors::SlidingDoor",
               "type": "behavior"
             }
           ],
@@ -1187,12 +1192,589 @@
           "description": "",
           "group": "Required",
           "extraInformation": [
-            "Movement3D::Movable"
+            "CustomBehaviors::Movable"
           ],
           "hidden": false,
           "name": "MoveableBehavior"
         }
       ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "Controlls the body, head, and movement of a character",
+      "fullName": "Character Controller",
+      "name": "Character",
+      "objectType": "Scene3D::Cube3DObject",
+      "eventsFunctions": [
+        {
+          "fullName": "Initialize the object",
+          "functionType": "Action",
+          "name": "Initialize",
+          "sentence": "Initialize _PARAM0_ with head _PARAM2_, body _PARAM3_, and collision box _PARAM4_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Object"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Body",
+                    "Object.X()",
+                    "Object.Y()",
+                    "Object.Layer()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "Body"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Head",
+                    "Object.X()",
+                    "Object.Y()",
+                    "Object.Layer()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Head",
+                    "Object3D",
+                    "=",
+                    "Body.Depth()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "Head"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "CollisionBox",
+                    "Object.X()",
+                    "Object.Y()",
+                    "Object.Layer()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "CollisionBox",
+                    "Resizable",
+                    "=",
+                    "max(Body.Width(), Head.Width())"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "CollisionBox",
+                    "Resizable",
+                    "=",
+                    "max(Body.Height(), Head.Height())"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetDepth"
+                  },
+                  "parameters": [
+                    "CollisionBox",
+                    "Object3D",
+                    "=",
+                    "Body.Depth() + Head.Depth()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "CollisionBox"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CustomBehaviors::Character::PropertyControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Player\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Body"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "CustomBehaviors::Character",
+              "type": "behavior"
+            },
+            {
+              "description": "Head",
+              "name": "Head",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Body",
+              "name": "Body",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "",
+              "name": "CollisionBox",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Update the object each frame",
+          "fullName": "Update the object",
+          "functionType": "Action",
+          "name": "Update",
+          "sentence": "Update _PARAM0_ with head _PARAM2_, body _PARAM3_, and collision box _PARAM4_. Update in respect to collision group _PARAM5_",
+          "events": [
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Build object from parts",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Bodies",
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetCenter"
+                      },
+                      "parameters": [
+                        "Bodies",
+                        "=",
+                        "Object.CenterX()",
+                        "=",
+                        "Object.CenterY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Bodies",
+                        "Object.Angle()",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Heads",
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetCenter"
+                      },
+                      "parameters": [
+                        "Heads",
+                        "=",
+                        "Object.CenterX()",
+                        "=",
+                        "Object.CenterY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Heads",
+                        "Object.Angle()",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 226,
+              "colorG": 144,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Collision",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "CollisionBox",
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetCenter"
+                      },
+                      "parameters": [
+                        "CollisionBox",
+                        "=",
+                        "Object.CenterX()",
+                        "=",
+                        "Object.CenterY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "CollisionBox",
+                        "Object.Angle()",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "CollisionBox",
+                            "CollisionGroup",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SeparateFromObjects"
+                          },
+                          "parameters": [
+                            "CollisionBox",
+                            "CollisionGroup",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "CollisionBox.CenterX()",
+                            "=",
+                            "CollisionBox.CenterY()"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "CustomBehaviors::Character",
+              "type": "behavior"
+            },
+            {
+              "description": "Head Group",
+              "name": "Heads",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Body Group",
+              "name": "Bodies",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "",
+              "name": "CollisionBox",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Collision Group",
+              "name": "CollisionGroup",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "Player",
+          "type": "Choice",
+          "label": "Control of the object",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "Player",
+            "Enemy"
+          ],
+          "hidden": false,
+          "name": "Control"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "Controls the physics of items",
+      "fullName": "Item Helper",
+      "name": "Item",
+      "objectType": "Scene3D::Cube3DObject",
+      "eventsFunctions": [
+        {
+          "fullName": "Make an object \"hold\" an item",
+          "functionType": "Action",
+          "name": "HoldAnItem",
+          "sentence": "_PARAM2_, hold item_PARAM0_ with a distance of _PARAM3_, an angle of _PARAM4_ degrees, and an elevation angle of _PARAM5_ degrees. Use an OffsetDistance of _PARAM6_ and an OffsetAngle of _PARAM7_.",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "(Center.CenterX() + cos(ToRad(Object.Angle() + OffsetAngle)) * OffsetDistance) + cos(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "(Center.CenterY() + sin(ToRad(Object.Angle() + OffsetAngle)) * OffsetDistance) + sin(ToRad(Angle)) * ((cos(ToRad(ElevationAngle)) * Distance))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetCenterZ"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object3D",
+                    "=",
+                    "Center.Object3D::CenterZ() - (sin(ToRad(ElevationAngle)) * Distance)"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "CustomBehaviors::Item",
+              "type": "behavior"
+            },
+            {
+              "description": "\"Center\" Object",
+              "name": "Center",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Distance",
+              "name": "Distance",
+              "type": "expression"
+            },
+            {
+              "description": "Angle, in degrees",
+              "name": "Angle",
+              "type": "expression"
+            },
+            {
+              "description": "Elevation angle, in degrees",
+              "name": "ElevationAngle",
+              "type": "expression"
+            },
+            {
+              "description": "",
+              "name": "OffsetDistance",
+              "type": "expression"
+            },
+            {
+              "description": "",
+              "name": "OffsetAngle",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [],
       "sharedPropertyDescriptors": []
     }
   ],

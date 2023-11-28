@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5117784035210373,
+    "zoomFactor": 1.0973679695629937,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -1096,7 +1096,7 @@
       "customSize": false,
       "height": 0,
       "layer": "",
-      "name": "MookHMC",
+      "name": "MookANF",
       "persistentUuid": "29551ef4-303a-46c8-8a08-3587ee63173a",
       "width": 0,
       "x": 695,
@@ -1111,7 +1111,7 @@
       "customSize": false,
       "height": 0,
       "layer": "",
-      "name": "MookHMC",
+      "name": "MookANF",
       "persistentUuid": "7d422def-67db-4314-8c2b-5a08575eb47f",
       "width": 0,
       "x": 675,
@@ -1147,6 +1147,21 @@
       "x": 270,
       "y": 445,
       "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Pistol",
+      "persistentUuid": "5aa50c19-9c1f-432a-8552-0fefea96b650",
+      "width": 0,
+      "x": 400,
+      "y": 450,
+      "zOrder": 12,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1251,7 +1266,7 @@
       "behaviors": [
         {
           "name": "Movable",
-          "type": "Movement3D::Movable",
+          "type": "CustomBehaviors::Movable",
           "Speed": 50,
           "target_x": 30,
           "target_y": 30,
@@ -1260,10 +1275,7 @@
         },
         {
           "name": "SlidingDoor",
-          "type": "GameScripts::SlidingDoor",
-          "Property": "Movable",
-          "Direction": "Down",
-          "Moveable_behavior": "Movable",
+          "type": "CustomBehaviors::SlidingDoor",
           "MoveableBehavior": "Movable"
         }
       ],
@@ -1340,14 +1352,13 @@
               "actions": [
                 {
                   "type": {
-                    "value": "GameScripts::CharacterNode::Initialize"
+                    "value": "CustomBehaviors::Character::Initialize"
                   },
                   "parameters": [
-                    "Player",
-                    "CharacterController",
-                    "HeadDefault",
-                    "BodyDefault",
-                    "Pistol",
+                    "MookANF",
+                    "Character",
+                    "HeadANFArmor",
+                    "BodyANFArmor",
                     "CollisionBox",
                     ""
                   ]
@@ -1360,16 +1371,44 @@
               "actions": [
                 {
                   "type": {
-                    "value": "GameScripts::CharacterNode::Initialize"
+                    "value": "CustomBehaviors::Character::Initialize"
                   },
                   "parameters": [
-                    "MookHMC",
-                    "CharacterController",
-                    "HeadHMC",
+                    "Player",
+                    "Character",
+                    "HeadDefault",
                     "BodyDefault",
-                    "Pistol",
                     "CollisionBox",
                     ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Mooks",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Pistol",
+                    "0",
+                    "0",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Mooks",
+                    "Pistol"
                   ]
                 }
               ]
@@ -1394,59 +1433,15 @@
           "actions": [
             {
               "type": {
-                "value": "GameScripts::CharacterNode::Update"
+                "value": "CustomBehaviors::Character::Update"
               },
               "parameters": [
-                "Player",
-                "CharacterController",
+                "Characters",
+                "Character",
                 "Heads",
                 "Bodies",
-                "Items",
                 "CollisionBox",
                 "Collision",
-                "Collision"
-              ]
-            },
-            {
-              "type": {
-                "value": "GameScripts::CharacterNode::Update"
-              },
-              "parameters": [
-                "MookHMC",
-                "CharacterController",
-                "Heads",
-                "Bodies",
-                "Items",
-                "CollisionBox",
-                "Collision",
-                "Collision"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Raycaster3D::RaycastFromCameraCenter"
-              },
-              "parameters": [
-                "",
-                "Door",
-                "200",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "GameScripts::SlidingDoor::Open"
-              },
-              "parameters": [
-                "Door",
-                "SlidingDoor",
                 ""
               ]
             }
@@ -1483,32 +1478,6 @@
                   "parameters": [
                     "",
                     ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "Items",
-                    "Player",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Cache"
-                  },
-                  "parameters": [
-                    "Items"
                   ]
                 }
               ]
@@ -1722,10 +1691,182 @@
                         "",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "FirstPersonCamera::LookFromObjectEyes"
+                      },
+                      "parameters": [
+                        "",
+                        "Heads",
+                        "\"View layer\"",
+                        ""
+                      ]
                     }
                   ]
                 }
               ]
+            },
+            {
+              "colorB": 134,
+              "colorG": 233,
+              "colorR": 184,
+              "creationTime": 0,
+              "name": "Player Interaction",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Interact",
+                        "True"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Raycaster3D::RaycastFromCameraCenter"
+                      },
+                      "parameters": [
+                        "",
+                        "Door",
+                        "200",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "ObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Player",
+                            "Interact",
+                            "True"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "CustomBehaviors::SlidingDoor::Open"
+                          },
+                          "parameters": [
+                            "Door",
+                            "SlidingDoor",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Raycaster3D::RaycastFromCameraCenter"
+                      },
+                      "parameters": [
+                        "",
+                        "Items",
+                        "200",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "ObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Player",
+                            "Interact",
+                            "True"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "LinkedObjects::LinkObjects"
+                          },
+                          "parameters": [
+                            "",
+                            "Player",
+                            "Items"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangeLayer"
+                          },
+                          "parameters": [
+                            "Items",
+                            "\"View layer\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Interact",
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
             }
           ],
           "parameters": []
@@ -1756,6 +1897,155 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Heads",
+                    "Mooks",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Heads",
+                    "Object3D",
+                    "+",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 28,
+          "colorG": 231,
+          "colorR": 248,
+          "creationTime": 0,
+          "name": "Item Control",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Characters",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Items",
+                        "Characters",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "LinkedObjects::PickObjectsLinkedTo"
+                          },
+                          "parameters": [
+                            "",
+                            "Heads",
+                            "Characters",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "LinkedObjects::PickObjectsLinkedTo"
+                              },
+                              "parameters": [
+                                "",
+                                "Bodies",
+                                "Characters",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "CustomBehaviors::Item::HoldAnItem"
+                                  },
+                                  "parameters": [
+                                    "Items",
+                                    "Item",
+                                    "Heads",
+                                    "30",
+                                    "Heads.Angle()",
+                                    "Heads.RotationY() + 30",
+                                    "20",
+                                    "90",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetAngle"
+                                  },
+                                  "parameters": [
+                                    "Items",
+                                    "=",
+                                    "Heads.Angle()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                                  },
+                                  "parameters": [
+                                    "Items",
+                                    "Object3D",
+                                    "=",
+                                    "Heads.RotationY()"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []
@@ -1770,7 +2060,7 @@
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
       "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 45,
+      "camera3DFieldOfView": 60,
       "camera3DNearPlaneDistance": 0.1,
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
@@ -1813,7 +2103,7 @@
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
       "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 45,
+      "camera3DFieldOfView": 60,
       "camera3DNearPlaneDistance": 0.1,
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
@@ -1825,15 +2115,15 @@
       "effects": [
         {
           "effectType": "Scene3D::HemisphereLight",
-          "name": "Default lighting",
+          "name": "Effect",
           "doubleParameters": {
-            "elevation": 45,
+            "elevation": 80,
             "intensity": 1,
-            "rotation": 45
+            "rotation": 0
           },
           "stringParameters": {
-            "groundColor": "64;64;64",
-            "skyColor": "255;255;2550",
+            "groundColor": "127;127;127",
+            "skyColor": "255;254;242",
             "top": "Z+"
           },
           "booleanParameters": {}
@@ -1875,16 +2165,20 @@
   ],
   "behaviorsSharedData": [
     {
-      "name": "CharacterController",
-      "type": "GameScripts::CharacterNode"
+      "name": "Character",
+      "type": "CustomBehaviors::Character"
     },
     {
       "name": "Flippable",
       "type": "FlippableCapability::FlippableBehavior"
     },
     {
+      "name": "Item",
+      "type": "CustomBehaviors::Item"
+    },
+    {
       "name": "Movable",
-      "type": "Movement3D::Movable"
+      "type": "CustomBehaviors::Movable"
     },
     {
       "name": "Object3D",
