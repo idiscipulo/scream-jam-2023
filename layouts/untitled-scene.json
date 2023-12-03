@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.0973679695629937,
+    "zoomFactor": 0.3797121001948085,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -1165,6 +1165,51 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI layer",
+      "name": "Crosshair",
+      "persistentUuid": "315aba52-6335-4ee6-8e08-bc12fade1339",
+      "width": 0,
+      "x": 590,
+      "y": 310,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Rifle",
+      "persistentUuid": "1359fc82-1ed9-4bb8-b011-2a92a14048d3",
+      "width": 0,
+      "x": 395,
+      "y": 475,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI layer",
+      "name": "Hit",
+      "persistentUuid": "dc4e35f9-dc1d-44f8-a4ea-634e74f11f00",
+      "width": 0,
+      "x": 590,
+      "y": 310,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -1346,6 +1391,20 @@
           ],
           "actions": [],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Hit"
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
@@ -1825,24 +1884,77 @@
                           ]
                         }
                       ],
-                      "actions": [
+                      "actions": [],
+                      "events": [
                         {
-                          "type": {
-                            "value": "LinkedObjects::LinkObjects"
-                          },
-                          "parameters": [
-                            "",
-                            "Player",
-                            "Items"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "AjoutObjConcern"
+                              },
+                              "parameters": [
+                                "",
+                                "Items"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "LinkedObjects::PickObjectsLinkedTo"
+                              },
+                              "parameters": [
+                                "",
+                                "Items",
+                                "Player",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "LinkedObjects::RemoveLinkBetween"
+                              },
+                              "parameters": [
+                                "",
+                                "Player",
+                                "Items"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ChangeLayer"
+                              },
+                              "parameters": [
+                                "Items",
+                                ""
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "ChangeLayer"
-                          },
-                          "parameters": [
-                            "Items",
-                            "\"View layer\""
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "LinkedObjects::LinkObjects"
+                              },
+                              "parameters": [
+                                "",
+                                "Player",
+                                "Items"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ChangeLayer"
+                              },
+                              "parameters": [
+                                "Items",
+                                "\"View layer\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -1861,6 +1973,123 @@
                         "Player",
                         "Interact",
                         "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 194,
+              "colorG": 227,
+              "colorR": 80,
+              "creationTime": 0,
+              "name": "Crosshair",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Items",
+                        "Player",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Crosshair",
+                        "Animation",
+                        "=",
+                        "\"Default\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "Items",
+                        "Player",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "Items.ObjectName()",
+                            "=",
+                            "\"Pistol\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "Crosshair",
+                            "Animation",
+                            "=",
+                            "\"Pistol\""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "Items.ObjectName()",
+                            "=",
+                            "\"Rifle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "Crosshair",
+                            "Animation",
+                            "=",
+                            "\"Rifle\""
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -1894,35 +2123,6 @@
                     "Player.CenterY()",
                     "0",
                     ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "Heads",
-                    "Mooks",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetRotationY"
-                  },
-                  "parameters": [
-                    "Heads",
-                    "Object3D",
-                    "+",
-                    "3"
                   ]
                 }
               ]
@@ -2008,10 +2208,10 @@
                                     "Items",
                                     "Item",
                                     "Heads",
-                                    "30",
+                                    "20",
                                     "Heads.Angle()",
                                     "Heads.RotationY() + 30",
-                                    "20",
+                                    "Bodies.Height() * 0.4",
                                     "90",
                                     ""
                                   ]
@@ -2060,7 +2260,7 @@
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
       "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 60,
+      "camera3DFieldOfView": 80,
       "camera3DNearPlaneDistance": 0.1,
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
@@ -2103,7 +2303,7 @@
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
       "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 60,
+      "camera3DFieldOfView": 80,
       "camera3DNearPlaneDistance": 0.1,
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
@@ -2144,29 +2344,21 @@
       "renderingType": "",
       "visibility": true,
       "cameras": [],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "Default lighting",
-          "doubleParameters": {
-            "elevation": 45,
-            "intensity": 1,
-            "rotation": 0
-          },
-          "stringParameters": {
-            "groundColor": "64;64;64",
-            "skyColor": "255;255;255",
-            "top": "Z+"
-          },
-          "booleanParameters": {}
-        }
-      ]
+      "effects": []
     }
   ],
   "behaviorsSharedData": [
     {
+      "name": "Animation",
+      "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
       "name": "Character",
       "type": "CustomBehaviors::Character"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
     },
     {
       "name": "Flippable",
@@ -2183,6 +2375,10 @@
     {
       "name": "Object3D",
       "type": "Scene3D::Base3DBehavior"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
     },
     {
       "name": "Resizable",

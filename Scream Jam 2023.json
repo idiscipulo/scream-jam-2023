@@ -126,6 +126,42 @@
         "name": "textures\\body_anf_armor.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/crosshair_default.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\crosshair_default.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/crosshair_pistol.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\crosshair_pistol.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/crosshair_rifle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\crosshair_rifle.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/crosshair_hit.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\crosshair_hit.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -481,6 +517,262 @@
         "bottomFaceResourceRepeat": false,
         "materialType": "StandardWithoutMetalness"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Crosshair",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Default",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair_default.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 0,
+                        "y": 4
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pistol",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair_pistol.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 0,
+                        "y": 4
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rifle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair_rifle.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 0,
+                        "y": 4
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "Rifle",
+      "type": "Scene3D::Cube3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Item",
+          "type": "CustomBehaviors::Item"
+        }
+      ],
+      "content": {
+        "width": 30,
+        "height": 5,
+        "depth": 8,
+        "enableTextureTransparency": false,
+        "facesOrientation": "Z",
+        "frontFaceResourceName": "textures\\gun_default.png",
+        "backFaceResourceName": "",
+        "backFaceUpThroughWhichAxisRotation": "X",
+        "leftFaceResourceName": "textures\\gun_default.png",
+        "rightFaceResourceName": "textures\\gun_default.png",
+        "topFaceResourceName": "textures\\gun_default.png",
+        "bottomFaceResourceName": "textures\\gun_default.png",
+        "frontFaceVisible": true,
+        "backFaceVisible": false,
+        "leftFaceVisible": true,
+        "rightFaceVisible": true,
+        "topFaceVisible": true,
+        "bottomFaceVisible": true,
+        "frontFaceResourceRepeat": false,
+        "backFaceResourceRepeat": false,
+        "leftFaceResourceRepeat": false,
+        "rightFaceResourceRepeat": false,
+        "topFaceResourceRepeat": false,
+        "bottomFaceResourceRepeat": false,
+        "materialType": "StandardWithoutMetalness"
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Hit",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair_hit.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 22,
+                        "y": 22
+                      },
+                      {
+                        "x": 78,
+                        "y": 22
+                      },
+                      {
+                        "x": 78,
+                        "y": 78
+                      },
+                      {
+                        "x": 22,
+                        "y": 78
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -505,6 +797,9 @@
         "children": [
           {
             "objectName": "Pistol"
+          },
+          {
+            "objectName": "Rifle"
           }
         ]
       },
@@ -527,6 +822,17 @@
           },
           {
             "objectName": "BodyANFArmor"
+          }
+        ]
+      },
+      {
+        "folderName": "UI",
+        "children": [
+          {
+            "objectName": "Crosshair"
+          },
+          {
+            "objectName": "Hit"
           }
         ]
       }
@@ -571,6 +877,9 @@
       "objects": [
         {
           "name": "Pistol"
+        },
+        {
+          "name": "Rifle"
         }
       ]
     },

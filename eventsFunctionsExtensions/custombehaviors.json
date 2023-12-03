@@ -1379,6 +1379,23 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "CustomBehaviors::Character::SetPropertyID"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "RandomInRange(10000, 99999)"
+                  ]
+                }
+              ]
             }
           ],
           "parameters": [
@@ -1657,6 +1674,48 @@
             }
           ],
           "objectGroups": []
+        },
+        {
+          "description": "the iD of the object.",
+          "fullName": "ID",
+          "functionType": "ExpressionAndCondition",
+          "group": "Character Controller configuration",
+          "name": "ID",
+          "sentence": "the iD",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnNumber"
+                  },
+                  "parameters": [
+                    "Object.Behavior::PropertyID()"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Cube3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "CustomBehaviors::Character",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
         }
       ],
       "propertyDescriptors": [
@@ -1672,6 +1731,17 @@
           ],
           "hidden": false,
           "name": "Control"
+        },
+        {
+          "value": "",
+          "type": "Number",
+          "unit": "Dimensionless",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [],
+          "hidden": true,
+          "name": "ID"
         }
       ],
       "sharedPropertyDescriptors": []
